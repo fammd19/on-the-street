@@ -1,0 +1,56 @@
+{
+  "listings": [
+    {
+      "id": 1,
+      "date": "2024-03-07",
+      "time": "10:15",
+      "address": "115 Denison Street",
+      "suburb": "Bondi Junction",
+      "postcode": "2026",
+      "items": [
+        "kitchenware",
+        "clothing"
+      ],
+      "dateUpdated": "2024-03-08",
+      "timeUpdated": "10:15",
+      "currentListing": true
+    },
+    {
+      "date": "2024-03-06",
+      "address": "115 Denison Street",
+      "suburb": "Bondi Junction",
+      "postcode": "2026",
+      "time": "11:11",
+      "items": [
+        "furniture",
+        "kitchenware"
+      ],
+      "dateUpdated": "2024-03-08",
+      "timeUpdated": "10:15",
+      "id": 2,
+      "currentListing": false
+    },
+    {
+      "date": "2024-03-14",
+      "address": "115 Denison Street",
+      "suburb": "Bondi Junction",
+      "postcode": "2026",
+      "time": "14:50",
+      "items": [
+        "kitchenware",
+        "electricals"
+      ],
+      "otherItems": "AAA, BBB, CCC",
+      "id": 3,
+      "dateUpdated": "2024-03-08",
+      "timeUpdated": "10:15",
+      "currentListing": false
+    }
+  ],
+  "prevId": [
+    {
+      "id": 0,
+      "prevId": 3
+    }
+  ]
+}

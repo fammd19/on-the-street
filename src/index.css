@@ -11,3 +11,38 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/*===Nav===*/
+
+.navbar-dark {
+  background-color: slategray;
+}
+
+/*===Forms===*/
+.hide {
+  display: none;
+}
+
+/*===Listings===*/
+.listing {
+  padding: 10px;
+}
+
+.listing h2 {
+  font-size: 24px;
+  color: black;
+  font-weight: 600;
+}
+
+.listing h3 {
+  font-size: 16px;
+  color: grey;
+  font-weight: 400;
+}
+
+.listing p, .listing li {
+  font-size: 16px;
+  color: black;
+  font-weight: 400;
+}
