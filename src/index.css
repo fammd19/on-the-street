@@ -12,6 +12,11 @@ code {
     monospace;
 }
 
+/*===Global===*/
+.hide {
+  display: none;
+}
+
 
 /*===Nav===*/
 
@@ -20,8 +25,9 @@ code {
 }
 
 /*===Forms===*/
-.hide {
-  display: none;
+#success-prompt {
+  color: green;
+  font-weight: bold;
 }
 
 /*===Listings===*/
@@ -45,4 +51,8 @@ code {
   font-size: 16px;
   color: black;
   font-weight: 400;
+}
+
+.strike {
+  text-decoration: line-through;
 }

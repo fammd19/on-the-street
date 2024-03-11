@@ -1,56 +1,171 @@
 {
   "listings": [
     {
-      "id": 1,
-      "date": "2024-03-07",
-      "time": "10:15",
-      "address": "115 Denison Street",
-      "suburb": "Bondi Junction",
-      "postcode": "2026",
-      "items": [
-        "kitchenware",
-        "clothing"
-      ],
-      "dateUpdated": "2024-03-08",
-      "timeUpdated": "10:15",
-      "currentListing": true
-    },
-    {
-      "date": "2024-03-06",
-      "address": "115 Denison Street",
-      "suburb": "Bondi Junction",
-      "postcode": "2026",
-      "time": "11:11",
-      "items": [
-        "furniture",
-        "kitchenware"
-      ],
-      "dateUpdated": "2024-03-08",
-      "timeUpdated": "10:15",
-      "id": 2,
-      "currentListing": false
-    },
-    {
       "date": "2024-03-14",
-      "address": "115 Denison Street",
-      "suburb": "Bondi Junction",
+      "address": "16 Military Road",
+      "suburb": "North Bondi",
       "postcode": "2026",
       "time": "14:50",
       "items": [
         "kitchenware",
-        "electricals"
+        "electricals",
+        "clothing"
+      ],
+      "otherItems": "",
+      "id": 3,
+      "dateUpdated": "2024-02-29",
+      "timeUpdated": "13:13"
+    },
+    {
+      "date": "2024-03-14",
+      "time": "17:26",
+      "items": [
+        "kitchenware",
+        "electricals",
+        "furniture"
       ],
       "otherItems": "AAA, BBB, CCC",
-      "id": 3,
-      "dateUpdated": "2024-03-08",
-      "timeUpdated": "10:15",
-      "currentListing": false
+      "address": "2 Rossie Steadings",
+      "suburb": "Perth",
+      "postcode": "PH20GA",
+      "id": 4,
+      "dateUpdated": "",
+      "timeUpdated": ""
+    },
+    {
+      "date": "2024-02-29",
+      "time": "11:17",
+      "address": "139c Railton Road",
+      "suburb": "London",
+      "postcode": "SE240LT",
+      "items": [
+        "furniture",
+        "electricals"
+      ],
+      "otherItems": "ABC",
+      "id": 6,
+      "dateUpdated": "",
+      "timeUpdated": ""
+    },
+    {
+      "date": "2024-03-06",
+      "time": "11:24",
+      "address": "2 Rossie Steadings",
+      "suburb": "Perth",
+      "postcode": "PH20GA",
+      "items": [
+        "furniture"
+      ],
+      "otherItems": "",
+      "id": 7,
+      "dateUpdated": "",
+      "timeUpdated": ""
+    },
+    {
+      "date": "2024-03-06",
+      "time": "01:01",
+      "address": "2 Rossie Steadings",
+      "suburb": "Perth",
+      "postcode": "PH20GA",
+      "items": [],
+      "otherItems": "",
+      "id": 8,
+      "dateUpdated": "",
+      "timeUpdated": ""
+    },
+    {
+      "date": "2024-03-14",
+      "time": "19:03",
+      "address": "16 Military Road",
+      "suburb": "North Bondi",
+      "postcode": "2026",
+      "items": [
+        "furniture",
+        "kitchenware"
+      ],
+      "otherItems": "",
+      "id": 9,
+      "dateUpdated": "",
+      "timeUpdated": ""
+    },
+    {
+      "date": "2024-03-07",
+      "time": "19:15",
+      "address": "115 DENISON STREET",
+      "suburb": "BONDI JUNCTION",
+      "postcode": "2022",
+      "items": [
+        "furniture",
+        "electricals"
+      ],
+      "otherItems": "YAZOOO",
+      "dateUpdated": "",
+      "timeUpdated": "",
+      "id": 10
+    },
+    {
+      "date": "2024-03-13",
+      "time": "20:07",
+      "address": "115 DENISON STREET",
+      "suburb": "BONDI JUNCTION",
+      "postcode": "2022",
+      "items": [
+        "kitchenware",
+        "furniture",
+        "electricals"
+      ],
+      "otherItems": "TEST2",
+      "dateUpdated": "",
+      "timeUpdated": "",
+      "id": 11
+    },
+    {
+      "date": "2024-03-07",
+      "time": "20:14",
+      "address": "115 DENISON STREET",
+      "suburb": "BONDI JUNCTION",
+      "postcode": "2022",
+      "items": [
+        "electricals"
+      ],
+      "otherItems": "TEST3",
+      "dateUpdated": "",
+      "timeUpdated": "",
+      "id": 13
+    },
+    {
+      "date": "2024-03-07",
+      "time": "20:14",
+      "address": "115 DENISON STREET",
+      "suburb": "BONDI JUNCTION",
+      "postcode": "2022",
+      "items": [
+        "electricals"
+      ],
+      "otherItems": "TEST4",
+      "dateUpdated": "",
+      "timeUpdated": "",
+      "id": 14
+    },
+    {
+      "date": "2024-03-06",
+      "time": "20:14",
+      "address": "2 Rossie Steadings",
+      "suburb": "Perth",
+      "postcode": "PH20GA",
+      "items": [
+        "electricals"
+      ],
+      "otherItems": "TEST4",
+      "dateUpdated": "",
+      "timeUpdated": "",
+      "id": 15
     }
   ],
   "prevId": [
     {
       "id": 0,
-      "prevId": 3
+      "prevId": 12
     }
   ]
 }

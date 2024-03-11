@@ -7,8 +7,13 @@ function AddForm () {
     const [formData, setFormData] = useState({
         date: "",
         time: "",
+        address: "",
+        suburb:"",
+        postcode:"",
         items: [],
         otherItems: "",
+        dateUpdated: "",
+        timeUpdated: ""
     })
     const [areOtherItems, setAreOtherItems] = useState(false)
 
@@ -40,6 +45,7 @@ function AddForm () {
 
     function handleSubmit (event) {
         event.preventDefault();
+        console.log("Submit")
         fetch("http://localhost:4000/listings", {
             method: "POST",
             headers: {
@@ -47,12 +53,20 @@ function AddForm () {
             },
             body: JSON.stringify(formData),
           })
-        .then(response => response.json())
-        .then(json => console.log(json))
-        
-        }
-    
+          .then(response => response.json())
+          .then(json => console.log(json))
+          .catch(error => console.log(error.message))
+          console.log("Submit")
+          displayPrompt();
+          // window.location.reload()
+    }
 
+    function displayPrompt () {
+      let prompt = document.getElementById("success-prompt");
+      prompt.classList.remove("hide");
+      setTimeout(() => prompt.classList.add("hide"), 5000);
+    }
+  
     return (
         <>
             <form onSubmit={handleSubmit}>
@@ -60,7 +74,14 @@ function AddForm () {
                 <input id="date-input" type="date" value={formData.date} onChange={(event)=>setFormData({...formData, date: event.target.value})}/>
                 <label htmlFor="time-input">Time found:</label>
                 <input id="time-input" type="time" value={formData.time} onChange={(event)=>setFormData({...formData, time: event.target.value})}/>
-                <div>
+                <br/>
+                <label htmlFor="address-input">Address:</label>
+                <input id="address-input" type="text" value={formData.address} onChange={(event)=>setFormData({...formData, address: event.target.value})}/>
+                <label htmlFor="suburb-input">Suburb:</label>
+                <input id="suburb-input" type="text" value={formData.suburb} onChange={(event)=>setFormData({...formData, suburb: event.target.value})}/>
+                <label htmlFor="postcode-input">Postcode:</label>
+                <input id="postcode-input" type="text" value={formData.postcode} onChange={(event)=>setFormData({...formData, postcode: event.target.value})}/>
+                <div id="checkboxes">
                     <label htmlFor="kitchenware">Kitchenware</label><input id="kitchenware" value="kitchenware" type="checkbox" onChange={addItems}/>
                     <label htmlFor="furniture">Furniture</label> <input id="furniture" value="furniture" type="checkbox" onChange={addItems}/>
                     <label htmlFor="electricals">Electricals</label> <input id="electricals" value="electricals" type="checkbox" onChange={addItems}/>
@@ -73,6 +94,7 @@ function AddForm () {
                 {/* <label htmlFor="image">Upload an image:</label><input type="file" onChange={(event)=>console.log(event.target.value)}/> */}
                 <br/>
                 <Button type="submit">Submit</Button>
+                <p id="success-prompt" className="hide">Form submitted successfully</p>
             </form>
         </>
     )
