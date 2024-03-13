@@ -52,19 +52,32 @@ export default function ListingPage () {
                     <div className="listing" value={listing.id}>
                         {/* Check if need value={listingID} expect not */}
                         <h2>{`Located at: ${listing.address}, ${listing.suburb} ${listing.postcode}`}</h2>
-                        <h3>{`Last updated: ${listing.dateUpdated} ${listing.timeUpdated}`}</h3>
-                        <ul>
+                        <h3>{
+                        listing.dateUpdated && listing.timeUpdated
+                        ?
+                        `Last updated: ${listing.dateUpdated} ${listing.timeUpdated}`
+                        :
+                        `Last updated: ${listing.date} ${listing.time}`}</h3>
+                        {
+                            listing.items.length > 0
+                            ?
+                            <ul>
                             {listing.items.map((item) => ( 
                                         <li key={item}>{item}</li>
                                     ))}
                             { !listing.otherItems ? null : <li>Other items: {listing.otherItems}</li>}           
-                        </ul>
-                        <a href={`https://www.google.com/maps/place/${listing.address}-${listing.suburb}-${listing.postcode}`}><Button variant="success">Get directions</Button></a>
+                            </ul>
+                            :
+                            <div>
+                            { !listing.otherItems ? null : <p>Other items: {listing.otherItems}</p>} 
+                            </div>
+                        }
+                        <a target="_blank" href={`https://www.google.com/maps/place/${listing.address}-${listing.suburb}-${listing.postcode}`}><Button variant="success">Get directions</Button></a>
                         <Button id="update-listing-btn" variant="warning" onClick={showListingUpdateForm}>Update listing</Button>
                         <Button variant="danger" onClick={handleDelete}>Mark as taken</Button>
                         <p id="success-delete" className="hide">Thanks! This has been marked as taken.</p>
                         <div id="listing-upate-form" className="hide">
-                            <UpdateForm listingDetails={listing}/>
+                            <UpdateForm listing={listing}/>
                         </div>
                     </div>
             </main>

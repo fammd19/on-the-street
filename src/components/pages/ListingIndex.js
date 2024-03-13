@@ -1,6 +1,7 @@
 import {useState, useEffect } from "react"
 import {Link} from "react-router-dom"
 import Card from 'react-bootstrap/Card';
+import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import Filter from "../Filter";
 
@@ -26,7 +27,7 @@ export default function ListingIndex () {
     .filter((listing) => (listing.suburb.toLowerCase().includes(search.toLowerCase())||listing.postcode.includes(search.toLowerCase())));
 
     return (
-        <>
+        <Container>
             {
                 listings.length>0
                 ?
@@ -40,9 +41,9 @@ export default function ListingIndex () {
                     {
                     listingsToDisplay.map ((listing) => 
                         { return (
-                        <Card key={listing.id}>
-                            <h2>{`${listing.suburb} ${listing.postcode}`}</h2>
-                            <h3>{`Last updated: ${listing.dateUpdated} ${listing.timeUpdated}`}</h3>
+                        <Card  className="my-3" key={listing.id}>
+                            <Card.Title>{`${listing.suburb} ${listing.postcode}`}</Card.Title>
+                            <Card.Subtitle>{`Last updated: ${listing.dateUpdated} ${listing.timeUpdated}`}</Card.Subtitle>
                             <ul>
                                 {listing.items.map((item) => ( 
                                             <li key={item}>{item}</li>
@@ -60,7 +61,7 @@ export default function ListingIndex () {
                 :
                 <p>No listing found</p>
             }
-        </>
+        </Container>
     )
 }
 

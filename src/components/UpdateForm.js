@@ -2,13 +2,17 @@ import { useState } from "react";
 import Button from 'react-bootstrap/Button';
 
 
-function UpdateForm ( {listingDetails} ) {
+function UpdateForm ( {listing} ) {
 
     const [updateFormData, setUpdateFormData] = useState({
-        dateUpdated: "",
-        timeUpdated: "",
+        // dateUpdated: listing.dateUpdated,
+        // timeUpdated: listing.timeUpdated,
+        // items: listing.items,
+        // otherItems: listing.otherItems,
+        dateUpdated: listing.dateUpdated,
+        timeUpdated: listing.timeUpdated,
         items: [],
-        otherItems: "",
+        otherItems: listing.otherItems,
     })
     const [areOtherItems, setAreOtherItems] = useState(false)
 
@@ -30,17 +34,19 @@ function UpdateForm ( {listingDetails} ) {
             ...prevData,
             items: [...prevData.items, value],
           }));
+          console.log("if " + updateFormData.items)
         } else {
             setUpdateFormData(prevData => ({
             ...prevData,
             items: prevData.items.filter(item => item !== value),
           }));
+          console.log("else " + updateFormData.items)
         }
       }
 
     function handleSubmit (event) {
         event.preventDefault();
-        fetch(`http://localhost:4000/listings/${listingDetails.id}`, {
+        fetch(`http://localhost:4000/listings/${listing.id}`, {
             method: "PATCH",
             headers: {
               "Content-Type": "application/json",
@@ -50,7 +56,6 @@ function UpdateForm ( {listingDetails} ) {
           .then(response => response.json())
           .then(json => console.log(json))
           displayPrompt();
-          window.location.reload()
     }
 
     function displayPrompt () {
@@ -63,9 +68,9 @@ function UpdateForm ( {listingDetails} ) {
         <>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="date-update">Date updated:</label>
-                <input id="date-update" type="date" value={updateFormData.date} onChange={(event)=>setUpdateFormData({...updateFormData, date: event.target.value})}/>
+                <input id="date-update" type="date" onChange={(event)=>setUpdateFormData({...updateFormData, dateUpdated: event.target.value})}/>
                 <label htmlFor="time-update">Time updated:</label>
-                <input id="time-updatet" type="time" value={updateFormData.time} onChange={(event)=>setUpdateFormData({...updateFormData, time: event.target.value})}/>
+                <input id="time-updatet" type="time" onChange={(event)=>setUpdateFormData({...updateFormData, timeUpdated: event.target.value})}/>
                 <br/>
                 <div id="checkboxes">
                     <label htmlFor="kitchenware">Kitchenware</label><input id="kitchenware" value="kitchenware" type="checkbox" onChange={addItems}/>

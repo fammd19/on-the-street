@@ -48,30 +48,18 @@
       "timeUpdated": ""
     },
     {
-      "date": "2024-03-06",
-      "time": "11:24",
+      "date": "2024-03-14",
+      "time": "09:20",
       "address": "2 Rossie Steadings",
       "suburb": "Perth",
       "postcode": "PH20GA",
       "items": [
         "furniture"
       ],
-      "otherItems": "",
+      "otherItems": "[item1], [item2],[item3]",
       "id": 7,
-      "dateUpdated": "",
-      "timeUpdated": ""
-    },
-    {
-      "date": "2024-03-06",
-      "time": "01:01",
-      "address": "2 Rossie Steadings",
-      "suburb": "Perth",
-      "postcode": "PH20GA",
-      "items": [],
-      "otherItems": "",
-      "id": 8,
-      "dateUpdated": "",
-      "timeUpdated": ""
+      "dateUpdated": "2024-03-14",
+      "timeUpdated": "09:19"
     },
     {
       "date": "2024-03-14",
