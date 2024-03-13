@@ -22,7 +22,7 @@ function Find ( {setListingId} ) {
 
     const listingsToDisplay = listings
     .filter(
-      (listing) => selectedCategory === "All" || listing.items.includes(selectedCategory.toLocaleLowerCase()) 
+      (listing) => selectedCategory === "All" || listing.items.includes(selectedCategory.toLowerCase()) 
     )
     .filter((listing) => (listing.suburb.toLowerCase().includes(search.toLowerCase())||listing.postcode.includes(search.toLowerCase())));
 
@@ -46,7 +46,6 @@ function Find ( {setListingId} ) {
                     ))}
                 </div>
                 }
-
             </div>
         </main>
     )

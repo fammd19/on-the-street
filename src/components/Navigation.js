@@ -11,7 +11,7 @@ function Navigation () {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Link className="nav-link" to="/find" >Find</Link>
+            <Link className="nav-link" to="/listings" >Find</Link>
             <Link className="nav-link" to="/share" >Share</Link>
           </Nav>
         </Navbar.Collapse>

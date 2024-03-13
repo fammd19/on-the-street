@@ -6,9 +6,12 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { Route, Routes } from "react-router";
 import Home from './components/pages/Home'
-import Find from './components/pages/Find'
 import Share from './components/pages/Share'
-import Listing from './components/pages/Listing'
+import Listings from './components/pages/Listings';
+import ListingPage from './components/pages/ListingPage'
+import ListingIndex from './components/pages/ListingIndex'
+import PageNotFound from './components/pages/PageNotFound';
+
 
 function App() {
 
@@ -31,9 +34,12 @@ function App() {
         <Navigation />
         <Routes>
           <Route path='/' exact element={<Home setListingId={setListingId}/>} />
-          <Route path='/find' element={<Find setListingId={setListingId}/>}/>
           <Route path='/share' element={<Share />} />
-          <Route path='/listing' element={<Listing listingId={listingId} listingDetails={listingDetails} setListingDetails={setListingDetails}/>} />
+          <Route path='*' element={<PageNotFound />} />
+          <Route path='/listings' element={<Listings />}>
+            <Route index element={<ListingIndex/>}/>
+            <Route path=":id" element={<ListingPage/>}/>
+          </Route>
         </Routes>
     </BrowserRouter>
   );
