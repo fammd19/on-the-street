@@ -77,7 +77,7 @@ export default function ListingPage () {
                         <Button variant="danger" onClick={handleDelete}>Mark as taken</Button>
                         <p id="success-delete" className="hide">Thanks! This has been marked as taken.</p>
                         <div id="listing-upate-form" className="hide">
-                            <UpdateForm listing={listing}/>
+                            <UpdateForm listing={listing} />
                         </div>
                     </div>
             </main>

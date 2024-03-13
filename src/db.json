@@ -1,51 +1,19 @@
 {
   "listings": [
     {
-      "date": "2024-03-14",
-      "address": "16 Military Road",
-      "suburb": "North Bondi",
-      "postcode": "2026",
-      "time": "14:50",
-      "items": [
-        "kitchenware",
-        "electricals",
-        "clothing"
-      ],
-      "otherItems": "",
-      "id": 3,
-      "dateUpdated": "2024-02-29",
-      "timeUpdated": "13:13"
-    },
-    {
-      "date": "2024-03-14",
-      "time": "17:26",
-      "items": [
-        "kitchenware",
-        "electricals",
-        "furniture"
-      ],
-      "otherItems": "AAA, BBB, CCC",
-      "address": "2 Rossie Steadings",
-      "suburb": "Perth",
-      "postcode": "PH20GA",
-      "id": 4,
-      "dateUpdated": "",
-      "timeUpdated": ""
-    },
-    {
       "date": "2024-02-29",
       "time": "11:17",
       "address": "139c Railton Road",
       "suburb": "London",
       "postcode": "SE240LT",
       "items": [
-        "furniture",
-        "electricals"
+        "electricals",
+        "kitchenware"
       ],
-      "otherItems": "ABC",
+      "otherItems": "[item 2],[item3]",
       "id": 6,
-      "dateUpdated": "",
-      "timeUpdated": ""
+      "dateUpdated": "2024-02-28",
+      "timeUpdated": "10:10"
     },
     {
       "date": "2024-03-14",
@@ -148,6 +116,21 @@
       "dateUpdated": "",
       "timeUpdated": "",
       "id": 15
+    },
+    {
+      "date": "2024-03-05",
+      "time": "09:54",
+      "address": "115 DENISON STREET",
+      "suburb": "BONDI JUNCTION",
+      "postcode": "2022",
+      "items": [
+        "electricals",
+        "furniture"
+      ],
+      "otherItems": "",
+      "dateUpdated": "",
+      "timeUpdated": "",
+      "id": 16
     }
   ],
   "prevId": [

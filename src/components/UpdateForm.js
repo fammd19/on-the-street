@@ -5,10 +5,6 @@ import Button from 'react-bootstrap/Button';
 function UpdateForm ( {listing} ) {
 
     const [updateFormData, setUpdateFormData] = useState({
-        // dateUpdated: listing.dateUpdated,
-        // timeUpdated: listing.timeUpdated,
-        // items: listing.items,
-        // otherItems: listing.otherItems,
         dateUpdated: listing.dateUpdated,
         timeUpdated: listing.timeUpdated,
         items: [],
@@ -45,7 +41,7 @@ function UpdateForm ( {listing} ) {
       }
 
     function handleSubmit (event) {
-        event.preventDefault();
+        // event.preventDefault();
         fetch(`http://localhost:4000/listings/${listing.id}`, {
             method: "PATCH",
             headers: {
@@ -56,6 +52,7 @@ function UpdateForm ( {listing} ) {
           .then(response => response.json())
           .then(json => console.log(json))
           displayPrompt();
+          
     }
 
     function displayPrompt () {
