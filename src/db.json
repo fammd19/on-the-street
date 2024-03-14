@@ -7,13 +7,12 @@
       "suburb": "London",
       "postcode": "SE240LT",
       "items": [
-        "electricals",
-        "kitchenware"
+        "Kitchenware"
       ],
       "otherItems": "[item 2],[item3]",
       "id": 6,
-      "dateUpdated": "2024-02-28",
-      "timeUpdated": "10:10"
+      "dateUpdated": "2024-03-01",
+      "timeUpdated": "18:28"
     },
     {
       "date": "2024-03-14",
