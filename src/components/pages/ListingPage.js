@@ -1,8 +1,7 @@
-import {useEffect, useState} from "react"
-import {useParams} from "react-router-dom"
-import {useNavigate} from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
-import Alert from 'react-bootstrap/Alert';
+import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
+import { useNavigate } from 'react-router-dom';
+import { Button, Alert } from 'react-bootstrap';
 import UpdateForm from "../UpdateForm"
 
 export default function ListingPage () {
@@ -15,7 +14,7 @@ export default function ListingPage () {
         fetch("http://localhost:4000/listings/"+id)
         .then(res => res.json())
         .then(json => setListing(json))
-    }, [])
+    }, [id])
 
     
     function showListingUpdateForm () {
@@ -28,7 +27,6 @@ export default function ListingPage () {
             formDiv.classList.add("hide")
             showBtn.textContent="Update listing"   
         }
-        console.log("Show/hide button")
     }
     
 

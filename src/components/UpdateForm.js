@@ -1,9 +1,5 @@
 import { useState } from "react";
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import Alert from 'react-bootstrap/Alert';
+import { Button, Form, Col, Row, Alert } from 'react-bootstrap';
 
 
 function UpdateForm ( {listing} ) {
@@ -24,6 +20,7 @@ function UpdateForm ( {listing} ) {
         } else {
             setAreOtherItems(false)
             document.getElementById("otherItems").classList.add("hide")
+            updateFormData.otherItems=""
         }
     }
 
@@ -76,15 +73,15 @@ function UpdateForm ( {listing} ) {
               <Row>
                 <Col sm={5} md={4} lg={4}>
                   <Form.Label className="mb-1" htmlFor="date-update">Date updated:</Form.Label>
-                  <Form.Control id="date-update" type="date" onChange={(event)=>setUpdateFormData({...updateFormData, dateUpdated: event.target.value})}/>
+                  <Form.Control required id="date-update" type="date" onChange={(event)=>setUpdateFormData({...updateFormData, dateUpdated: event.target.value})}/>
                 </Col>
                 <Col sm={5} md={4} lg={4}>
                   <Form.Label className="mb-1" htmlFor="time-update">Time updated:</Form.Label>
-                  <Form.Control id="time-updatet" type="time" onChange={(event)=>setUpdateFormData({...updateFormData, timeUpdated: event.target.value})}/>
+                  <Form.Control required id="time-updatet" type="time" onChange={(event)=>setUpdateFormData({...updateFormData, timeUpdated: event.target.value})}/>
                 </Col>
               </Row>
               <Row id="checkboxes" className="mb-1 mx-1 my-3">
-                <Form.Check label="Kicthenware" id="kitchenware" value="Kitchenware" type="checkbox" onChange={addItems}/>
+                <Form.Check label="Kitchenware" id="kitchenware" value="Kitchenware" type="checkbox" onChange={addItems}/>
                 <Form.Check label="Furniture" id="furniture" value="Furniture" type="checkbox" onChange={addItems}/>
                 <Form.Check label="Electricals" id="electricals" value="Electricals" type="checkbox" onChange={addItems}/>
                 <Form.Check label="Other items" id="others" value="Others" type="checkbox" onChange={handleOthers}/>
@@ -97,7 +94,13 @@ function UpdateForm ( {listing} ) {
               </div>
               {/* <label htmlFor="image">Upload an image:</label><input type="file" onChange={(event)=>console.log(event.target.value)}/> */}
               <br/>
-              <Button type="submit">Submit</Button>
+              {
+                  updateFormData.items.length > 0 || areOtherItems === true
+                  ?
+                  <Button type="submit">Submit</Button>
+                  :
+                  <Button disabled type="submit">Submit</Button>
+                }
               <Alert variant="success" id="success-prompt" className="hide">Form submitted successfully</Alert>
             </Form>
         </>

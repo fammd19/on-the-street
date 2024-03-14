@@ -1,7 +1,5 @@
 import React from "react";
-import Form from 'react-bootstrap/Form';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
+import { Form, Col, Row } from 'react-bootstrap';
 
 function Filter ({ search, onSearchChange, onCategoryChange }) {
   function handleSearchChange(event) {
@@ -9,7 +7,7 @@ function Filter ({ search, onSearchChange, onCategoryChange }) {
   }
 
   return (
-    <Form>
+    <Form className="mx-2">
       <div className="Filter">
         <Row>
           <Col>

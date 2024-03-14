@@ -1,8 +1,6 @@
-import {Outlet} from "react-router-dom"
-import Button from 'react-bootstrap/Button';
-import {Link} from "react-router-dom"
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
+import { Outlet } from "react-router-dom"
+import { Link } from "react-router-dom"
+import { Button, Col, Row } from 'react-bootstrap';
 
 export default function Listings () {
     return (

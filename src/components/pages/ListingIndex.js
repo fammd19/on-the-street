@@ -1,8 +1,6 @@
-import {useState, useEffect } from "react"
-import {Link} from "react-router-dom"
-import Card from 'react-bootstrap/Card';
-import Container from 'react-bootstrap/Container';
-import Button from 'react-bootstrap/Button';
+import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
+import { Button, Card, Container } from 'react-bootstrap';
 import Filter from "../Filter";
 
 export default function ListingIndex () {

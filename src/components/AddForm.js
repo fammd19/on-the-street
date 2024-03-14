@@ -1,9 +1,10 @@
-import { useState } from "react";
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import Alert from 'react-bootstrap/Alert';
+import { useEffect, useState } from "react";
+import { Button, Form, Col, Row, Alert } from 'react-bootstrap';
+// import Button from 'react-bootstrap/Button';
+// import Form from 'react-bootstrap/Form';
+// import Col from 'react-bootstrap/Col';
+// import Row from 'react-bootstrap/Row';
+// import Alert from 'react-bootstrap/Alert';
 
 
 function AddForm () {
@@ -17,7 +18,7 @@ function AddForm () {
         items: [],
         otherItems: "",
         dateUpdated: "",
-        timeUpdated: ""
+        timeUpdated: "",
     })
     const [areOtherItems, setAreOtherItems] = useState(false)
 
@@ -29,6 +30,7 @@ function AddForm () {
         } else {
             setAreOtherItems(false)
             document.getElementById("otherItems").classList.add("hide")
+            formData.otherItems=""
         }
     }
 
@@ -45,7 +47,7 @@ function AddForm () {
             items: prevData.items.filter(item => item !== value),
           }));
         }
-      }
+    }
 
     function handleSubmit (event) {
         event.preventDefault();
@@ -71,7 +73,7 @@ function AddForm () {
             items: [],
             otherItems: "",
             dateUpdated: "",
-            timeUpdated: ""
+            timeUpdated: "",
           });
     }
 
@@ -80,38 +82,38 @@ function AddForm () {
       prompt.classList.remove("hide");
       setTimeout(() => prompt.classList.add("hide"), 5000);
     }
-  
+
     return (
         <>
-            <Form onSubmit={handleSubmit}>
+            <Form className="mt-3" onSubmit={handleSubmit}>
                 <Row>
                   <Col sm={5} md={4} lg={3}>
                    <Form.Label className="my-3 mb-0" htmlFor="date-input">Date found:</Form.Label>
-                   <Form.Control id="date-input" type="date" value={formData.date} onChange={(event)=>setFormData({...formData, date: event.target.value})}/>
+                   <Form.Control required id="date-input" type="date" value={formData.date} onChange={(event)=>setFormData({...formData, date: event.target.value})}/>
                   </Col>
                   <Col sm={5} md={4} lg={3}>
                     <Form.Label className="my-3 mb-0" htmlFor="time-input">Time found:</Form.Label>
-                    <Form.Control id="time-input" type="time" value={formData.time} onChange={(event)=>setFormData({...formData, time: event.target.value})}/>
+                    <Form.Control required id="time-input" type="time" value={formData.time} onChange={(event)=>setFormData({...formData, time: event.target.value})}/>
                   </Col>
                 </Row>
                 <Row>
                   <Col sm={8} md={7} lg={6}>
                     <Form.Label className="my-3 mb-0" htmlFor="address-input">Address:</Form.Label>
-                    <Form.Control id="address-input" type="text" value={formData.address} onChange={(event)=>setFormData({...formData, address: event.target.value})}/>
+                    <Form.Control required id="address-input" type="text" value={formData.address} onChange={(event)=>setFormData({...formData, address: event.target.value})}/>
                   </Col>
                 </Row>                
                 <Row>
                   <Col sm={5} md={4} lg={3}>
                     <Form.Label className="my-3 mb-0" htmlFor="suburb-input">Suburb:</Form.Label>
-                    <Form.Control id="suburb-input" type="text" value={formData.suburb} onChange={(event)=>setFormData({...formData, suburb: event.target.value})}/>
+                    <Form.Control required id="suburb-input" type="text" value={formData.suburb} onChange={(event)=>setFormData({...formData, suburb: event.target.value})}/>
                   </Col>
                   <Col sm={5} md={4} lg={3}>
                     <Form.Label className="my-3 mb-0" htmlFor="postcode-input">Postcode:</Form.Label>
-                    <Form.Control id="postcode-input" type="text" value={formData.postcode} onChange={(event)=>setFormData({...formData, postcode: event.target.value})}/>
+                    <Form.Control required id="postcode-input" type="text" value={formData.postcode} onChange={(event)=>setFormData({...formData, postcode: event.target.value})}/>
                   </Col>
                 </Row> 
                 <Row id="checkboxes" className="mb-1 mx-1 my-3">
-                    <Form.Check label="Kicthenware" id="kitchenware" value="Kitchenware" type="checkbox" onChange={addItems}/>
+                    <Form.Check label="Kitchenware" id="kitchenware" value="Kitchenware" type="checkbox" onChange={addItems}/>
                     <Form.Check label="Furniture" id="furniture" value="Furniture" type="checkbox" onChange={addItems}/>
                     <Form.Check label="Electricals" id="electricals" value="Electricals" type="checkbox" onChange={addItems}/>
                     <Form.Check label="Other items" id="others" value="Others" type="checkbox" onChange={handleOthers}/>
@@ -122,9 +124,14 @@ function AddForm () {
                       <Form.Control id="other-input" type="text" value={formData.otherItems} onChange={(event)=>setFormData({...formData, otherItems: event.target.value})}/>
                     </Col>
                 </div>
-                {/* <label htmlFor="image">Upload an image:</label><input type="file" onChange={(event)=>console.log(event.target.value)}/> */}
-                <br/>
-                <Button type="submit">Submit</Button>
+                {
+                  formData.items.length > 0 || formData.otherItems !== ""
+                  ?
+                  <Button type="submit">Submit</Button>
+                  :
+                  <Button disabled type="submit">Submit</Button>
+                }
+                
                 <Alert id="success-prompt" variant="success" className="hide my-2">Form submitted successfully</Alert>
             </Form>
         </>
