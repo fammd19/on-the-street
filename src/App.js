@@ -15,25 +15,11 @@ import PageNotFound from './components/pages/PageNotFound';
 
 function App() {
 
-  const [listingId, setListingId] = useState('');
-  const [listingDetails, setListingDetails] = useState({
-    id: "",
-    date: "",
-    time: "",
-    address: "",
-    suburb: "",
-    postcode: "",
-    items: [],
-    otherItems: "",
-    dateUpdated: "",
-    timeUpdated: ""
-})
-
   return (
     <BrowserRouter>
         <Navigation />
         <Routes>
-          <Route path='/' exact element={<Home setListingId={setListingId}/>} />
+          <Route path='/' exact element={<Home/>} />
           <Route path='/share' element={<Share />} />
           <Route path='*' element={<PageNotFound />} />
           <Route path='/listings' element={<Listings />}>

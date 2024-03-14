@@ -1,4 +1,3 @@
-import Listings from './Listings';
 import FindMap from '../FindMap'
 
 function Home () {

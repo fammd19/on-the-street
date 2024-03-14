@@ -1,14 +1,14 @@
 main {
-    margin: 20px;
+	margin: 20px;
 }
 
 Button {
-    margin: 10px;
-    min-width: 80px;
+	margin: 10px;
+	min-width: 80px;
 }
 
 @media (max-width: 768px) {
-    body {
-        text-align: center;
-    }
-  }
+	body {
+		text-align: center;
+	}
+}

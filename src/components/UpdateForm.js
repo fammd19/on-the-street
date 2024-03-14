@@ -1,5 +1,9 @@
 import { useState } from "react";
 import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Alert from 'react-bootstrap/Alert';
 
 
 function UpdateForm ( {listing} ) {
@@ -41,7 +45,7 @@ function UpdateForm ( {listing} ) {
       }
 
     function handleSubmit (event) {
-        // event.preventDefault();
+        event.preventDefault();
         fetch(`http://localhost:4000/listings/${listing.id}`, {
             method: "PATCH",
             headers: {
@@ -52,7 +56,12 @@ function UpdateForm ( {listing} ) {
           .then(response => response.json())
           .then(json => console.log(json))
           displayPrompt();
-          
+          setUpdateFormData({
+            dateUpdated: listing.dateUpdated,
+            timeUpdated: listing.timeUpdated,
+            items: [],
+            otherItems: listing.otherItems,
+        })
     }
 
     function displayPrompt () {
@@ -63,27 +72,34 @@ function UpdateForm ( {listing} ) {
   
     return (
         <>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="date-update">Date updated:</label>
-                <input id="date-update" type="date" onChange={(event)=>setUpdateFormData({...updateFormData, dateUpdated: event.target.value})}/>
-                <label htmlFor="time-update">Time updated:</label>
-                <input id="time-updatet" type="time" onChange={(event)=>setUpdateFormData({...updateFormData, timeUpdated: event.target.value})}/>
-                <br/>
-                <div id="checkboxes">
-                    <label htmlFor="kitchenware">Kitchenware</label><input id="kitchenware" value="kitchenware" type="checkbox" onChange={addItems}/>
-                    <label htmlFor="furniture">Furniture</label> <input id="furniture" value="furniture" type="checkbox" onChange={addItems}/>
-                    <label htmlFor="electricals">Electricals</label> <input id="electricals" value="electricals" type="checkbox" onChange={addItems}/>
-                    <label htmlFor="others">Other itmes</label> <input id="others" value="others" type="checkbox" onChange={handleOthers}/>
-                </div>
-                <div id="otherItems" className="hide">
-                    <label htmlFor="other-input">Please add other items:</label>
-                    <input id="other-input" type="text" value={updateFormData.otherItems} onChange={(event)=>setUpdateFormData({...updateFormData, otherItems: event.target.value})}/>
-                </div>
-                {/* <label htmlFor="image">Upload an image:</label><input type="file" onChange={(event)=>console.log(event.target.value)}/> */}
-                <br/>
-                <Button type="submit">Submit</Button>
-                <p id="success-prompt" className="hide">Form submitted successfully</p>
-            </form>
+            <Form className="mt-3" onSubmit={handleSubmit}>
+              <Row>
+                <Col sm={5} md={4} lg={4}>
+                  <Form.Label className="mb-1" htmlFor="date-update">Date updated:</Form.Label>
+                  <Form.Control id="date-update" type="date" onChange={(event)=>setUpdateFormData({...updateFormData, dateUpdated: event.target.value})}/>
+                </Col>
+                <Col sm={5} md={4} lg={4}>
+                  <Form.Label className="mb-1" htmlFor="time-update">Time updated:</Form.Label>
+                  <Form.Control id="time-updatet" type="time" onChange={(event)=>setUpdateFormData({...updateFormData, timeUpdated: event.target.value})}/>
+                </Col>
+              </Row>
+              <Row id="checkboxes" className="mb-1 mx-1 my-3">
+                <Form.Check label="Kicthenware" id="kitchenware" value="Kitchenware" type="checkbox" onChange={addItems}/>
+                <Form.Check label="Furniture" id="furniture" value="Furniture" type="checkbox" onChange={addItems}/>
+                <Form.Check label="Electricals" id="electricals" value="Electricals" type="checkbox" onChange={addItems}/>
+                <Form.Check label="Other items" id="others" value="Others" type="checkbox" onChange={handleOthers}/>
+              </Row>
+              <div id="otherItems" className="hide">
+                <Col sm={8} md={7} lg={6}>
+                  <Form.Label htmlFor="other-input">Please add other items:</Form.Label>
+                  <Form.Control id="other-input" type="text" value={updateFormData.otherItems} onChange={(event)=>setUpdateFormData({...updateFormData, otherItems: event.target.value})}/>
+                </Col>
+              </div>
+              {/* <label htmlFor="image">Upload an image:</label><input type="file" onChange={(event)=>console.log(event.target.value)}/> */}
+              <br/>
+              <Button type="submit">Submit</Button>
+              <Alert variant="success" id="success-prompt" className="hide">Form submitted successfully</Alert>
+            </Form>
         </>
     )
 }

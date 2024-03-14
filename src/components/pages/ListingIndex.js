@@ -42,15 +42,19 @@ export default function ListingIndex () {
                     listingsToDisplay.map ((listing) => 
                         { return (
                         <Card  className="my-3" key={listing.id}>
-                            <Card.Title>{`${listing.suburb} ${listing.postcode}`}</Card.Title>
-                            <Card.Subtitle>{`Last updated: ${listing.dateUpdated} ${listing.timeUpdated}`}</Card.Subtitle>
-                            <ul>
-                                {listing.items.map((item) => ( 
-                                            <li key={item}>{item}</li>
-                                        ))}
-                                { !listing.otherItems ? null : <li>Other items: {listing.otherItems}</li>}           
-                            </ul>
-                            <Link to={`/listings/${listing.id}`}><Button variant="warning">More details</Button></Link>
+                            <Card.Body>
+                                <Card.Title>{`${listing.suburb} ${listing.postcode}`}</Card.Title>
+                                <Card.Subtitle className="text-muted">{`Last updated: ${listing.dateUpdated} ${listing.timeUpdated}`}</Card.Subtitle>
+                                <Card.Text>
+                                    <ul>
+                                        {listing.items.map((item) => ( 
+                                                    <li key={item}>{item}</li>
+                                                ))}
+                                        { !listing.otherItems ? null : <li>Other items: {listing.otherItems}</li>}           
+                                    </ul>
+                                </Card.Text>
+                                <Link to={`/listings/${listing.id}`}><Button variant="warning">More details</Button></Link>
+                            </Card.Body>
                         </Card>
                         )
                     })
