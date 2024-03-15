@@ -12,17 +12,18 @@ export default function ListingIndex () {
         fetch("http://localhost:4000/listings")
         .then(res => res.json())
         .then(json => setListings(json))
+        .catch(error => console.log(error.message))
     },[])
 
     function handleCategoryChange(event) {
         setSelectedCategory(event.target.value);
       }
 
-    const listingsToDisplay = listings
-    .filter(
-      (listing) => selectedCategory === "" || listing.items.includes(selectedCategory.toLowerCase()) 
-    )
-    .filter((listing) => (listing.suburb.toLowerCase().includes(search.toLowerCase())||listing.postcode.includes(search.toLowerCase())));
+    // const listingsToDisplay = listings
+    // .filter(
+    //   (listing) => selectedCategory === "" || listing.items.includes(selectedCategory.toLowerCase()) 
+    // )
+    // .filter((listing) => (listing.suburb.toLowerCase().includes(search.toLowerCase())||listing.postcode.includes(search.toLowerCase())));
 
     return (
         <Container className="mx-4">
@@ -37,7 +38,7 @@ export default function ListingIndex () {
                 />
                 <div className="listing">
                     {
-                    listingsToDisplay.map ((listing) => 
+                    listings.map ((listing) => 
                         { return (
                         <Card  className="my-3" key={listing.id}>
                             <Card.Body>
@@ -45,9 +46,7 @@ export default function ListingIndex () {
                                 <Card.Subtitle className="text-muted">{`Last updated: ${listing.dateUpdated} ${listing.timeUpdated}`}</Card.Subtitle>
                                 <Card.Text>
                                     <ul>
-                                        {listing.items.map((item) => ( 
-                                                    <li key={item}>{item}</li>
-                                                ))}
+                                        { !listing.kitchenware ? null : <li>Kitchenware: {listing.kitchenware}</li>} 
                                         { !listing.otherItems ? null : <li>Other items: {listing.otherItems}</li>}           
                                     </ul>
                                 </Card.Text>

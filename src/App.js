@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Navigation from './components/Navigation';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -15,16 +15,48 @@ import PageNotFound from './components/pages/PageNotFound';
 
 function App() {
 
+  const [formData, setFormData] = useState({
+    date: "",
+    time: "",
+    address: "",
+    suburb:"",
+    postcode:"",
+    kitchenware: "",
+    furniture: "",
+    electricals: "",
+    otherItems: "",
+    dateUpdated: "",
+    timeUpdated: ""
+  })
+  const [areOtherItems, setAreOtherItems] = useState(false)
+  const [isKitchenware, setIsKitchenware] = useState(false)
+  const [isFurniture, setIsFurniture] = useState(false)
+  const [isElectricals, setIsElectricals] = useState(false)
+
   return (
     <BrowserRouter>
         <Navigation />
         <Routes>
           <Route path='/' exact element={<Home/>} />
-          <Route path='/share' element={<Share />} />
+          <Route path='/share' element={<Share 
+            formData={formData} setFormData={setFormData}
+            areOtherItems={areOtherItems} setAreOtherItems={setAreOtherItems}
+            isKitchenware={isKitchenware} setIsKitchenware={setIsKitchenware}
+            isFurniture={isFurniture} setIsFurniture={setIsFurniture}
+            isElectricals={isElectricals} setIsElectricals={setIsElectricals}
+            />} 
+          />
           <Route path='*' element={<PageNotFound />} />
           <Route path='/listings' element={<Listings />}>
             <Route index element={<ListingIndex/>}/>
-            <Route path=":id" element={<ListingPage/>}/>
+            <Route path=":id" element={<ListingPage
+              formData={formData} setFormData={setFormData}
+              areOtherItems={areOtherItems} setAreOtherItems={setAreOtherItems}
+              isKitchenware={isKitchenware} setIsKitchenware={setIsKitchenware}
+              isFurniture={isFurniture} setIsFurniture={setIsFurniture}
+              isElectricals={isElectricals} setIsElectricals={setIsElectricals}
+              />}
+            />
           </Route>
         </Routes>
     </BrowserRouter>

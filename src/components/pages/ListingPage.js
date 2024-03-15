@@ -4,7 +4,11 @@ import { useNavigate } from 'react-router-dom';
 import { Button, Alert } from 'react-bootstrap';
 import UpdateForm from "../UpdateForm"
 
-export default function ListingPage () {
+export default function ListingPage ( {formData,setFormData,
+    areOtherItems,setAreOtherItems,
+    isKitchenware,setIsKitchenware,
+    isFurniture,setIsFurniture,
+    isElectricals,setIsElectricals } ) {
     const {id} = useParams();
     const [listing, setListing] = useState (null)
 
@@ -60,18 +64,12 @@ export default function ListingPage () {
                             }
                         </h3>
                         {
-                            listing.items.length > 0
-                             ?
                             <ul>
-                                {listing.items.map((item) => ( 
-                                                <li key={item}>{item}</li>
-                                        ))}
+                                { !listing.electricals ? null : <li>Electricals: {listing.electricals}</li>}  
+                                { !listing.furniture ? null : <li>Furniture: {listing.furniture}</li>}   
+                                { !listing.kitchenware ? null : <li>Kitchenware: {listing.kitchenware}</li>}  
                                 { !listing.otherItems ? null : <li>Other items: {listing.otherItems}</li>}           
                             </ul>
-                            :
-                            <div>
-                                { !listing.otherItems ? null : <p>Other items: {listing.otherItems}</p>} 
-                            </div>
                         }
                         <div>
                             <a target="_blank" rel="noreferrer" href={`https://www.google.com/maps/place/${listing.address}-${listing.suburb}-${listing.postcode}`}><Button className="mx-1" variant="success">Get directions</Button></a>
@@ -80,7 +78,14 @@ export default function ListingPage () {
                         </div>
                         <Alert variant="danger" id="success-delete" className="hide">Thanks! This has been marked as taken.</Alert>
                         <div id="listing-upate-form" className="hide">
-                            <UpdateForm listing={listing} />
+                            <UpdateForm 
+                                listing={listing} setListing={setListing} 
+                                formData={formData} setFormData={setFormData}
+                                areOtherItems={areOtherItems} setAreOtherItems={setAreOtherItems}
+                                isKitchenware={isKitchenware} setIsKitchenware={setIsKitchenware}
+                                isFurniture={isFurniture} setIsFurniture={setIsFurniture}
+                                isElectricals={isElectricals} setIsElectricals={setIsElectricals}
+                            />
                         </div>
                     </div>
             </main>

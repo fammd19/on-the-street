@@ -1,18 +1,18 @@
 {
   "listings": [
     {
-      "date": "2024-02-29",
-      "time": "11:17",
-      "address": "139c Railton Road",
-      "suburb": "London",
-      "postcode": "SE240LT",
-      "items": [
-        "Kitchenware"
-      ],
-      "otherItems": "[item 2],[item3]",
-      "id": 6,
-      "dateUpdated": "2024-03-01",
-      "timeUpdated": "18:28"
+      "date": "",
+      "time": "",
+      "address": "",
+      "suburb": "",
+      "postcode": "",
+      "kitchenware": "",
+      "electricals": "",
+      "furniture": "",
+      "otherItems": "Test2",
+      "id": 1,
+      "dateUpdated": "2024-03-07",
+      "timeUpdated": "12:39"
     },
     {
       "date": "2024-03-14",
@@ -20,232 +20,69 @@
       "address": "2 Rossie Steadings",
       "suburb": "Perth",
       "postcode": "PH20GA",
-      "items": [
-        "furniture"
-      ],
-      "otherItems": "[item1], [item2],[item3]",
-      "id": 7,
-      "dateUpdated": "2024-03-14",
-      "timeUpdated": "09:19"
-    },
-    {
-      "date": "2024-03-14",
-      "time": "19:03",
-      "address": "16 Military Road",
-      "suburb": "North Bondi",
-      "postcode": "2026",
-      "items": [
-        "furniture",
-        "kitchenware"
-      ],
+      "kitchenware": "[k1], [k2],[k3]",
+      "electricals": "[e1], [e2],[e3],[e5]",
+      "furniture": "[f1], [f2],[f3],[f4]",
       "otherItems": "",
-      "id": 9,
+      "id": 2,
+      "dateUpdated": "2024-03-07",
+      "timeUpdated": "00:56"
+    },
+    {
+      "date": "2024-03-16",
+      "time": "23:55",
+      "address": "139c Railton Road",
+      "suburb": "London",
+      "postcode": "SE240LT",
+      "kitchenware": "ABC",
+      "furniture": "",
+      "electricals": "",
+      "otherItems": "",
       "dateUpdated": "",
-      "timeUpdated": ""
+      "timeUpdated": "",
+      "id": 3
     },
     {
       "date": "2024-03-07",
-      "time": "19:15",
+      "time": "00:23",
       "address": "115 DENISON STREET",
       "suburb": "BONDI JUNCTION",
       "postcode": "2022",
-      "items": [
-        "furniture",
-        "electricals"
-      ],
-      "otherItems": "YAZOOO",
+      "kitchenware": "",
+      "furniture": "",
+      "electricals": "Electricals",
+      "otherItems": "Other items",
       "dateUpdated": "",
       "timeUpdated": "",
-      "id": 10
+      "id": 4
     },
     {
-      "date": "2024-03-13",
-      "time": "20:07",
-      "address": "115 DENISON STREET",
-      "suburb": "BONDI JUNCTION",
-      "postcode": "2022",
-      "items": [
-        "kitchenware",
-        "furniture",
-        "electricals"
-      ],
-      "otherItems": "TEST2",
-      "dateUpdated": "",
-      "timeUpdated": "",
-      "id": 11
-    },
-    {
-      "date": "2024-03-07",
-      "time": "20:14",
-      "address": "115 DENISON STREET",
-      "suburb": "BONDI JUNCTION",
-      "postcode": "2022",
-      "items": [
-        "electricals"
-      ],
-      "otherItems": "TEST3",
-      "dateUpdated": "",
-      "timeUpdated": "",
-      "id": 13
-    },
-    {
-      "date": "2024-03-07",
-      "time": "20:14",
-      "address": "115 DENISON STREET",
-      "suburb": "BONDI JUNCTION",
-      "postcode": "2022",
-      "items": [
-        "electricals"
-      ],
-      "otherItems": "TEST4",
-      "dateUpdated": "",
-      "timeUpdated": "",
-      "id": 14
-    },
-    {
-      "date": "2024-03-06",
-      "time": "20:14",
+      "date": "2024-03-08",
+      "time": "00:27",
       "address": "2 Rossie Steadings",
       "suburb": "Perth",
       "postcode": "PH20GA",
-      "items": [
-        "electricals"
-      ],
-      "otherItems": "TEST4",
-      "dateUpdated": "",
-      "timeUpdated": "",
-      "id": 15
-    },
-    {
-      "date": "2024-03-05",
-      "time": "09:54",
-      "address": "115 DENISON STREET",
-      "suburb": "BONDI JUNCTION",
-      "postcode": "2022",
-      "items": [
-        "electricals",
-        "furniture"
-      ],
+      "kitchenware": "ABC",
+      "furniture": "",
+      "electricals": "EXAMPLE ELECTRICALS",
       "otherItems": "",
       "dateUpdated": "",
       "timeUpdated": "",
-      "id": 16
+      "id": 5
     },
     {
-      "date": "2024-03-15",
-      "time": "15:10",
-      "address": "Unit 9, 16 Military Road",
-      "suburb": "Sydney",
-      "postcode": "2026",
-      "items": [
-        "Kitchenware",
-        "Furniture",
-        "Electricals"
-      ],
-      "otherItems": "Plates",
-      "dateUpdated": "",
-      "timeUpdated": "",
-      "id": 17
-    },
-    {
-      "date": "2024-03-15",
-      "time": "15:10",
-      "address": "Unit 9, 16 Military Road",
-      "suburb": "Sydney",
-      "postcode": "2026",
-      "items": [
-        "Kitchenware",
-        "Furniture",
-        "Electricals"
-      ],
-      "otherItems": "Plates",
-      "dateUpdated": "",
-      "timeUpdated": "",
-      "id": 18
-    },
-    {
-      "date": "2024-03-15",
-      "time": "15:10",
-      "address": "Unit 9, 16 Military Road",
-      "suburb": "Sydney",
-      "postcode": "2026",
-      "items": [
-        "Kitchenware",
-        "Furniture",
-        "Electricals"
-      ],
-      "otherItems": "Plates",
-      "dateUpdated": "",
-      "timeUpdated": "",
-      "id": 19
-    },
-    {
-      "date": "2024-03-15",
-      "time": "15:10",
-      "address": "Unit 9, 16 Military Road",
-      "suburb": "Sydney",
-      "postcode": "2026",
-      "items": [
-        "Kitchenware",
-        "Furniture",
-        "Electricals"
-      ],
-      "otherItems": "Plates",
-      "dateUpdated": "",
-      "timeUpdated": "",
-      "id": 20
-    },
-    {
-      "date": "2024-03-15",
-      "time": "15:10",
-      "address": "Unit 9, 16 Military Road",
-      "suburb": "Sydney",
-      "postcode": "2026",
-      "items": [
-        "Kitchenware",
-        "Furniture",
-        "Electricals"
-      ],
-      "otherItems": "Plates1",
-      "dateUpdated": "",
-      "timeUpdated": "",
-      "id": 21
-    },
-    {
-      "date": "2024-03-15",
-      "time": "15:10",
-      "address": "Unit 9, 16 Military Road",
-      "suburb": "Sydney",
-      "postcode": "2026",
-      "items": [
-        "Kitchenware",
-        "Furniture",
-        "Electricals"
-      ],
-      "otherItems": "Plates1",
-      "dateUpdated": "",
-      "timeUpdated": "",
-      "id": 22
-    },
-    {
-      "date": "2024-03-15",
-      "time": "16:51",
-      "address": "115 DENISON STREET",
-      "suburb": "BONDI JUNCTION",
-      "postcode": "2022",
-      "items": [
-        "Kitchenware"
-      ],
+      "date": "2024-03-08",
+      "time": "11:11",
+      "address": "139c Railton Road",
+      "suburb": "London",
+      "postcode": "SE240LT",
+      "kitchenware": "PLATES",
+      "furniture": "",
+      "electricals": "",
       "otherItems": "",
       "dateUpdated": "",
       "timeUpdated": "",
-      "id": 23
-    }
-  ],
-  "prevId": [
-    {
-      "id": 0,
-      "prevId": 3
+      "id": 6
     }
   ]
 }
