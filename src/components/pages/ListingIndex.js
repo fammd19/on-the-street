@@ -25,7 +25,7 @@ export default function ListingIndex () {
     .filter((listing) => (listing.suburb.toLowerCase().includes(search.toLowerCase())||listing.postcode.includes(search.toLowerCase())));
 
     return (
-        <Container>
+        <Container className="mx-4">
             {
                 listings.length>0
                 ?
