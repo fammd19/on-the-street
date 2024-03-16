@@ -1,12 +1,25 @@
+import { useEffect } from "react";
 import AddForm from "../AddForm"
 import { Button } from 'react-bootstrap';
 import { Link } from "react-router-dom"
 
-function Share ( { formData,setFormData,
-    areOtherItems,setAreOtherItems,
-    isKitchenware,setIsKitchenware,
-    isFurniture,setIsFurniture,
-    isElectricals,setIsElectricals } ) {
+function Share ( { formData,setFormData, } ) {
+
+    useEffect (()=> {
+        setFormData({
+            date: "",
+            time: "",
+            address: "",
+            suburb:"",
+            postcode:"",
+            kitchenware: "",
+            furniture: "",
+            electricals: "",
+            otherItems: "",
+            dateUpdated: "",
+            timeUpdated: "",
+        })
+    },[])
 
     return (
         <main className="mx-5 my-5">
@@ -15,10 +28,6 @@ function Share ( { formData,setFormData,
             <h1 className="mt-5">Add a find</h1>
             <AddForm 
                 formData={formData} setFormData={setFormData}
-                areOtherItems={areOtherItems} setAreOtherItems={setAreOtherItems}
-                isKitchenware={isKitchenware} setIsKitchenware={setIsKitchenware}
-                isFurniture={isFurniture} setIsFurniture={setIsFurniture}
-                isElectricals={isElectricals} setIsElectricals={setIsElectricals}
             />
         </main>
     )

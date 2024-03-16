@@ -4,11 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button, Alert } from 'react-bootstrap';
 import UpdateForm from "../UpdateForm"
 
-export default function ListingPage ( {formData,setFormData,
-    areOtherItems,setAreOtherItems,
-    isKitchenware,setIsKitchenware,
-    isFurniture,setIsFurniture,
-    isElectricals,setIsElectricals } ) {
+export default function ListingPage ( { formData,setFormData } ) {
     const {id} = useParams();
     const [listing, setListing] = useState (null)
 
@@ -21,7 +17,7 @@ export default function ListingPage ( {formData,setFormData,
     }, [id])
 
     
-    function showListingUpdateForm () {
+    function displayListingUpdateForm () {
         const formDiv = document.getElementById("listing-upate-form");
         const showBtn = document.getElementById("update-listing-btn")
         if (formDiv.classList.contains("hide")) {
@@ -32,14 +28,19 @@ export default function ListingPage ( {formData,setFormData,
             showBtn.textContent="Update listing"   
         }
     }
-    
 
+    function displayPrompt (id) {
+        let prompt = document.getElementById(id);
+        prompt.classList.remove("hide");
+        setTimeout(() => prompt.classList.add("hide"), 5000);
+      }
     
     function handleDelete () {
         fetch(`http://localhost:4000/listings/${listing.id}`, {
             method: "DELETE"
         })
         .then(response=>response.json())
+        displayPrompt("success-delete")
         navigate('/listings');
     }
     
@@ -73,18 +74,15 @@ export default function ListingPage ( {formData,setFormData,
                         }
                         <div>
                             <a target="_blank" rel="noreferrer" href={`https://www.google.com/maps/place/${listing.address}-${listing.suburb}-${listing.postcode}`}><Button className="mx-1" variant="success">Get directions</Button></a>
-                            <Button className="mx-1" id="update-listing-btn" variant="warning" onClick={showListingUpdateForm}>Update listing</Button>
+                            <Button className="mx-1" id="update-listing-btn" variant="warning" onClick={displayListingUpdateForm}>Update listing</Button>
                             <Button className="mx-1" variant="danger" onClick={handleDelete}>Mark as taken</Button>
                         </div>
                         <Alert variant="danger" id="success-delete" className="hide">Thanks! This has been marked as taken.</Alert>
+                        <Alert variant="success" id="success-prompt" className="hide my-2">Form submitted successfully</Alert>
                         <div id="listing-upate-form" className="hide">
                             <UpdateForm 
-                                listing={listing} setListing={setListing} 
+                                listing={listing} setListing={setListing} displayListingUpdateForm={displayListingUpdateForm} displayPrompt={displayPrompt}
                                 formData={formData} setFormData={setFormData}
-                                areOtherItems={areOtherItems} setAreOtherItems={setAreOtherItems}
-                                isKitchenware={isKitchenware} setIsKitchenware={setIsKitchenware}
-                                isFurniture={isFurniture} setIsFurniture={setIsFurniture}
-                                isElectricals={isElectricals} setIsElectricals={setIsElectricals}
                             />
                         </div>
                     </div>

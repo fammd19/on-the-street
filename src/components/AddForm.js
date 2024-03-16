@@ -3,31 +3,13 @@ import { Button, Form, Col, Row, Alert } from 'react-bootstrap';
 
 
 function AddForm (
-  { formData,setFormData,
-    areOtherItems,setAreOtherItems,
-    isKitchenware,setIsKitchenware,
-    isFurniture,setIsFurniture,
-    isElectricals,setIsElectricals }
+  { formData,setFormData }
 ) {
 
-    // const [formData, setFormData] = useState({
-    //     date: "",
-    //     time: "",
-    //     address: "",
-    //     suburb:"",
-    //     postcode:"",
-    //     kitchenware: "",
-    //     furniture: "",
-    //     electricals: "",
-    //     otherItems: "",
-    //     dateUpdated: "",
-    //     timeUpdated: "",
-    // })
-    // const [areOtherItems, setAreOtherItems] = useState(false)
-    // const [isKitchenware, setIsKitchenware] = useState(false)
-    // const [isFurniture, setIsFurniture] = useState(false)
-    // const [isElectricals, setIsElectricals] = useState(false)
-
+    const [areOtherItems, setAreOtherItems] = useState(false)
+    const [isKitchenware, setIsKitchenware] = useState(false)
+    const [isFurniture, setIsFurniture] = useState(false)
+    const [isElectricals, setIsElectricals] = useState(false)
 
     function handleOthers () {
         //Show others text input field if other checkbox is ticked
@@ -76,21 +58,6 @@ function AddForm (
           formData.electricals=""
       }
     }
-
-    // function addItems(event) {
-    //     const value = event.target.value;
-    //     if (!formData.items.includes(value)) {
-    //       setFormData(prevData => ({
-    //         ...prevData,
-    //         items: [...prevData.items, value],
-    //       }));
-    //     } else {
-    //       setFormData(prevData => ({
-    //         ...prevData,
-    //         items: prevData.items.filter(item => item !== value),
-    //       }));
-    //     }
-    // }
 
     function handleSubmit (event) {
         event.preventDefault();
@@ -157,44 +124,44 @@ function AddForm (
                     <Form.Control required id="postcode-input" type="text" value={formData.postcode} onChange={(event)=>setFormData({...formData, postcode: event.target.value})}/>
                   </Col>
                 </Row> 
-                <Row className="mx-1 my-1">
-                  <Form.Check label="Electricals" id="electricals" value="Electricals" type="checkbox" onChange={handleElectricals}/>
-                  <div id="electricalsItems" className="hide">
-                    <Col sm={8} md={7} lg={6}>
-                      <Form.Label htmlFor="electricals-input">Please add electrical items:</Form.Label>
+                <Row className="mx-1 mt-2">
+                  <Form.Check label="Electricals" className="checkbox"id="electricals" value="Electricals" type="checkbox" onChange={handleElectricals}/>
+                  <div id="electricalsItems" className="hide mx-3">
+                    <Col sm={7} md={6} lg={5}>
+                      <Form.Label className="mb-0 text-muted" htmlFor="electricals-input">Please list electrical items:</Form.Label>
                       <Form.Control id="electricals-input" type="text" value={formData.electricals} onChange={(event)=>setFormData({...formData, electricals: event.target.value})}/>
                     </Col>
                   </div>
                 </Row>
-                <Row className="mx-1 my-1">
-                  <Form.Check label="Furniture" id="furniture" value="Furniture" type="checkbox" onChange={handleFurniture}/>
-                  <div id="furnitureItems" className="hide">
-                    <Col sm={8} md={7} lg={6}>
-                      <Form.Label htmlFor="furniture-input">Please add furniture:</Form.Label>
+                <Row className="mx-1 mt-2">
+                  <Form.Check label="Furniture" className="checkbox" id="furniture" value="Furniture" type="checkbox" onChange={handleFurniture}/>
+                  <div id="furnitureItems" className="hide mx-3">
+                    <Col sm={7} md={6} lg={5}>
+                      <Form.Label className="mb-0 text-muted" htmlFor="furniture-input">Please list furniture:</Form.Label>
                       <Form.Control id="furniture-input" type="text" value={formData.furniture} onChange={(event)=>setFormData({...formData, furniture: event.target.value})}/>
                     </Col>
                   </div>
                 </Row>
-                <Row className="mx-1 my-1">
-                  <Form.Check label="Kitchenware" id="kitchenware" value="Kitchenware" type="checkbox" onChange={handleKitchenware}/>
-                  <div id="kitchenwareItems" className="hide">
-                    <Col sm={8} md={7} lg={6}>
-                      <Form.Label htmlFor="kitchenware-input">Please add kitchenware:</Form.Label>
+                <Row className="mx-1 mt-2">
+                  <Form.Check label="Kitchenware" className="checkbox" id="kitchenware" value="Kitchenware" type="checkbox" onChange={handleKitchenware}/>
+                  <div id="kitchenwareItems" className="hide mx-3">
+                    <Col sm={7} md={6} lg={5}>
+                      <Form.Label className="mb-0 text-muted" htmlFor="kitchenware-input">Please list kitchenware:</Form.Label>
                       <Form.Control id="kitchenware-input" type="text" value={formData.kitchenware} onChange={(event)=>setFormData({...formData, kitchenware: event.target.value})}/>
                     </Col>
                   </div>
                 </Row>
-                <Row className="mx-1 my-1">
-                  <Form.Check label="Other items" id="others" value="Others" type="checkbox" onChange={handleOthers}/>
-                  <div id="otherItems" className="hide">
-                    <Col sm={8} md={7} lg={6}>
-                        <Form.Label htmlFor="other-input">Please add other items:</Form.Label>
+                <Row className="mx-1 mt-2 mb-2">
+                  <Form.Check label="Other items" className="checkbox" id="others" value="Others" type="checkbox" onChange={handleOthers}/>
+                  <div id="otherItems" className="hide mx-3">
+                    <Col sm={7} md={6} lg={5}>
+                        <Form.Label className="mb-0 text-muted" htmlFor="other-input">Please list other items:</Form.Label>
                         <Form.Control id="other-input" type="text" value={formData.otherItems} onChange={(event)=>setFormData({...formData, otherItems: event.target.value})}/>
                     </Col>
                   </div>
                 </Row>
                 {
-                  formData.kitchenware !== "" || formData.otherItems !== ""
+                  formData.kitchenware !== "" || formData.otherItems !== "" || formData.electricals !== "" || formData.furniture !== ""
                   ?
                   <Button type="submit">Submit</Button>
                   :

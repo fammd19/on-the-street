@@ -23,7 +23,4 @@ function ListingSummary ( {listing, setListingId} ) {
         <Button variant="warning" onClick={handleClick}>More details</Button>
     </div>
     )
-
 }
-
-export default ListingSummary

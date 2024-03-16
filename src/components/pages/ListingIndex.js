@@ -19,11 +19,11 @@ export default function ListingIndex () {
         setSelectedCategory(event.target.value);
       }
 
-    // const listingsToDisplay = listings
-    // .filter(
-    //   (listing) => selectedCategory === "" || listing.items.includes(selectedCategory.toLowerCase()) 
-    // )
-    // .filter((listing) => (listing.suburb.toLowerCase().includes(search.toLowerCase())||listing.postcode.includes(search.toLowerCase())));
+    const listingsToDisplay = listings
+    .filter(
+      (listing) => selectedCategory === "" || listing.selectedCategory !== "" 
+    )
+    .filter((listing) => (listing.suburb.toLowerCase().includes(search.toLowerCase())||listing.postcode.includes(search.toLowerCase())));
 
     return (
         <Container className="mx-4">
@@ -44,10 +44,12 @@ export default function ListingIndex () {
                             <Card.Body>
                                 <Card.Title>{`${listing.suburb} ${listing.postcode}`}</Card.Title>
                                 <Card.Subtitle className="text-muted">{`Last updated: ${listing.dateUpdated} ${listing.timeUpdated}`}</Card.Subtitle>
-                                <Card.Text>
+                                <Card.Text className="mt-2">
                                     <ul>
-                                        { !listing.kitchenware ? null : <li>Kitchenware: {listing.kitchenware}</li>} 
-                                        { !listing.otherItems ? null : <li>Other items: {listing.otherItems}</li>}           
+                                        { !listing.electricals ? null : <li>Electricals</li>} 
+                                        { !listing.furniture ? null : <li>Furniture</li>} 
+                                        { !listing.kitchenware ? null : <li>Kitchenware</li>} 
+                                        { !listing.otherItems ? null : <li>Other items</li>}           
                                     </ul>
                                 </Card.Text>
                                 <Link to={`/listings/${listing.id}`}><Button variant="warning">More details</Button></Link>
