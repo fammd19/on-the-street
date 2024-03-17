@@ -5,10 +5,10 @@ import { Button, Col, Row } from 'react-bootstrap';
 export default function Listings () {
     return (
         <>
-            <div className="mx-5 my-5">
-                <Link className="ml-3" to="../listings"><Button variant="success">Find</Button></Link>
-                <Link className="mx-3" to="/share"><Button variant="secondary">Share</Button></Link>
-            </div>
+            {/* <div className="mx-5 my-5">
+                <Link className="ml-3" to="../listings"><Button variant="success">Current listings</Button></Link>
+                <Link className="mx-3" to="/share"><Button variant="secondary">Add a listing</Button></Link>
+            </div> */}
             <Row  className="my-3">
                 <Col sm={10} md={8} lg={6}>
                     <Outlet/>

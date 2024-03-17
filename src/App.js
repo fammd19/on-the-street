@@ -28,10 +28,7 @@ function App() {
     dateUpdated: "",
     timeUpdated: ""
   })
-  const [areOtherItems, setAreOtherItems] = useState(false)
-  const [isKitchenware, setIsKitchenware] = useState(false)
-  const [isFurniture, setIsFurniture] = useState(false)
-  const [isElectricals, setIsElectricals] = useState(false)
+
 
   return (
     <BrowserRouter>
@@ -40,10 +37,6 @@ function App() {
           <Route path='/' exact element={<Home/>} />
           <Route path='/share' element={<Share 
             formData={formData} setFormData={setFormData}
-            areOtherItems={areOtherItems} setAreOtherItems={setAreOtherItems}
-            isKitchenware={isKitchenware} setIsKitchenware={setIsKitchenware}
-            isFurniture={isFurniture} setIsFurniture={setIsFurniture}
-            isElectricals={isElectricals} setIsElectricals={setIsElectricals}
             />} 
           />
           <Route path='*' element={<PageNotFound />} />
@@ -51,10 +44,6 @@ function App() {
             <Route index element={<ListingIndex/>}/>
             <Route path=":id" element={<ListingPage
               formData={formData} setFormData={setFormData}
-              areOtherItems={areOtherItems} setAreOtherItems={setAreOtherItems}
-              isKitchenware={isKitchenware} setIsKitchenware={setIsKitchenware}
-              isFurniture={isFurniture} setIsFurniture={setIsFurniture}
-              isElectricals={isElectricals} setIsElectricals={setIsElectricals}
               />}
             />
           </Route>

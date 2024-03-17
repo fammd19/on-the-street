@@ -97,6 +97,20 @@
       "dateUpdated": "",
       "timeUpdated": "",
       "id": 9
+    },
+    {
+      "date": "2024-03-08",
+      "time": "13:31",
+      "address": "2 Rossie Steadings",
+      "suburb": "Perth",
+      "postcode": "PH20GA",
+      "kitchenware": "Wine glasses",
+      "furniture": "",
+      "electricals": "Blender",
+      "otherItems": "",
+      "dateUpdated": "",
+      "timeUpdated": "",
+      "id": 10
     }
   ]
 }

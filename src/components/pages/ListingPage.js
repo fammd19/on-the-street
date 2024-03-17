@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { Button, Alert } from 'react-bootstrap';
 import UpdateForm from "../UpdateForm"
 
@@ -47,6 +47,10 @@ export default function ListingPage ( { formData,setFormData } ) {
 
     return (
         <>
+            <div className="mx-5 my-5">
+                <Link className="ml-3" to="/listings"><Button variant="secondary">Back to listings</Button></Link>
+                <Link className="mx-3" to="/share"><Button variant="secondary">Add a listing</Button></Link>
+            </div>
             {
                 listing
                 ?

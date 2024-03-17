@@ -27,6 +27,10 @@ export default function ListingIndex () {
 
     return (
         <Container className="mx-4">
+            <div className="mx-2 mt-2 mb-4">
+                <Link className="ml-3" to="/listings"><Button variant="success">Current listings</Button></Link>
+                <Link className="mx-3" to="/share"><Button variant="secondary">Add a listing</Button></Link>
+            </div>
             {
                 listings.length>0
                 ?

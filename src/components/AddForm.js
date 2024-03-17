@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Button, Form, Col, Row, Alert } from 'react-bootstrap';
+import { useNavigate  } from "react-router-dom"
 
 
 function AddForm (
@@ -10,6 +11,8 @@ function AddForm (
     const [isKitchenware, setIsKitchenware] = useState(false)
     const [isFurniture, setIsFurniture] = useState(false)
     const [isElectricals, setIsElectricals] = useState(false)
+
+    const navigate = useNavigate();
 
     function handleOthers () {
         //Show others text input field if other checkbox is ticked
@@ -70,29 +73,8 @@ function AddForm (
             body: JSON.stringify(formData),
           })
           .then(response => response.json())
-          .then(json => console.log(json))
+          .then(json => navigate(`/listings/${json.id}`))
           .catch(error => console.log(error.message))
-          console.log("Submit")
-          displayPrompt();
-          setFormData({
-            date: "",
-            time: "",
-            address: "",
-            suburb:"",
-            postcode:"",
-            kitchenware: "",
-            furniture: "",
-            electricals: "",
-            otherItems: "",
-            dateUpdated: "",
-            timeUpdated: "",
-          });
-    }
-
-    function displayPrompt () {
-      let prompt = document.getElementById("success-prompt");
-      prompt.classList.remove("hide");
-      setTimeout(() => prompt.classList.add("hide"), 5000);
     }
 
     return (
@@ -167,7 +149,6 @@ function AddForm (
                   :
                   <Button disabled type="submit">Submit</Button>
                 }
-                
                 <Alert id="success-prompt" variant="success" className="hide my-2">Form submitted successfully</Alert>
             </Form>
         </>
