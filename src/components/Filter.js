@@ -2,8 +2,9 @@ import React from "react";
 import { Form, Col, Row } from 'react-bootstrap';
 
 function Filter ({ search, onSearchChange, onCategoryChange }) {
+
   function handleSearchChange(event) {
-    onSearchChange(event.target.value);
+    onSearchChange(event.target.value)
   }
 
   return (
