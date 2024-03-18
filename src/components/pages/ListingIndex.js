@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-import { Button, Card, Col} from 'react-bootstrap';
+import { Button, Card, Col, Row, Container} from 'react-bootstrap';
 import Filter from "../Filter";
 
 
@@ -22,11 +22,28 @@ export default function ListingIndex () {
 
     const listingsToDisplay = listings
     .filter(
-      (listing) => selectedCategory === "" || listing.selectedCategory !== "" 
+        (listing) => {
+            if ( selectedCategory !== "" ) {
+            for (let key in listing) {
+                if (key === selectedCategory && listing[key] !== "" ) {
+                    return listing
+                }
+            }
+        } else {
+            return listing   
+        }
+        }
     )
     .filter((listing) => (listing.suburb.toLowerCase().includes(search.toLowerCase())||listing.postcode.includes(search.toLowerCase())));
 
     return (
+        <Container>
+        <Row  className="my-5 mx-4 justify-content-md-center">
+            <Col>
+                <Link className="ml-3" to="../listings"><Button disabled variant="success">Current listings</Button></Link>
+                <Link className="mx-3" to="/share"><Button variant="success">Add a listing</Button></Link>
+            </Col>
+        </Row>
         <div className="mx-4">
 
                 {
@@ -67,6 +84,7 @@ export default function ListingIndex () {
                 <p>No listing found</p>
             }
         </div>
+        </Container>
     )
 }
 

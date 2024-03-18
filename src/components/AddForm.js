@@ -133,7 +133,7 @@ function AddForm (
                     </Col>
                   </div>
                 </Row>
-                <Row className="mx-1 mt-2 mb-2">
+                <Row className="mx-1 mt-2 mb-4">
                   <Form.Check label="Other items" className="checkbox" id="others" value="Others" type="checkbox" onChange={handleOthers}/>
                   <div id="otherItems" className="hide mx-3">
                     <Col sm={7} md={6} lg={5}>

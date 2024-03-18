@@ -1,48 +1,6 @@
 {
   "listings": [
     {
-      "date": "2024-03-14",
-      "time": "09:20",
-      "address": "2 Rossie Steadings",
-      "suburb": "Perth",
-      "postcode": "PH20GA",
-      "kitchenware": "[k1], [k2],[k3]",
-      "electricals": "[e1], [e2],[e3],[e5],[e6]",
-      "furniture": "[f1], [f2],[f3],[f4]",
-      "otherItems": "",
-      "id": 2,
-      "dateUpdated": "2024-03-07",
-      "timeUpdated": "00:56"
-    },
-    {
-      "date": "2024-03-08",
-      "time": "00:27",
-      "address": "2 Rossie Steadings",
-      "suburb": "Perth",
-      "postcode": "PH20GA",
-      "kitchenware": "ABC",
-      "furniture": "",
-      "electricals": "EXAMPLE ELECTRICALS",
-      "otherItems": "",
-      "dateUpdated": "",
-      "timeUpdated": "",
-      "id": 5
-    },
-    {
-      "date": "2024-03-16",
-      "time": "23:55",
-      "address": "139c Railton Road",
-      "suburb": "London",
-      "postcode": "SE240LT",
-      "kitchenware": "ABC",
-      "furniture": "Sofa",
-      "electricals": "",
-      "otherItems": "",
-      "dateUpdated": "",
-      "timeUpdated": "",
-      "id": 3
-    },
-    {
       "date": "2024-03-09",
       "time": "07:10",
       "address": "115 DENISON STREET",
@@ -76,7 +34,7 @@
       "address": "139c Railton Road",
       "suburb": "London",
       "postcode": "SE240LT",
-      "kitchenware": "Mugs",
+      "category": "Mugs",
       "furniture": "",
       "electricals": "",
       "otherItems": "",
@@ -111,6 +69,20 @@
       "dateUpdated": "",
       "timeUpdated": "",
       "id": 10
+    },
+    {
+      "date": "2024-03-08",
+      "time": "16:09",
+      "address": "116 DENISON STREET",
+      "suburb": "BONDI JUNCTION",
+      "postcode": "2022",
+      "kitchenware": "Mugs, glasses",
+      "furniture": "",
+      "electricals": "Blender, hairdryer, toaster",
+      "otherItems": "",
+      "dateUpdated": "",
+      "timeUpdated": "",
+      "id": 11
     }
   ]
 }
