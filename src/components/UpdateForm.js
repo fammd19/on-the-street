@@ -59,30 +59,55 @@ function UpdateForm ( { listing, setListing, displayListingUpdateForm, displayPr
                   </InputGroup>
                 </Col>
               </Row>
-              <Row className="my-1">
-                <Col sm={10} md={9} lg={8}>
-                  <InputGroup className="mb-3">
-                    <InputGroup.Text>Clothing</InputGroup.Text>
-                    <Form.Control
-                        type="text"
-                        onChange={(event)=>setFormData({...formData, clothing: event.target.value})}
-                        value={formData.clothing}
-                    />
-                  </InputGroup>
-                </Col>
-              </Row>
-              <Row className="my-1">
-                <Col sm={10} md={9} lg={8}>
-                  <InputGroup className="mb-3">
-                    <InputGroup.Text>Electricals</InputGroup.Text>
+              {
+                formData.clothing 
+                ?
+                <Row className="my-1">
+                  <Col sm={10} md={9} lg={8}>
+                    <InputGroup className="mb-3">
+                      <InputGroup.Text>Clothing</InputGroup.Text>
                       <Form.Control
-                        type="text"
-                        onChange={(event)=>setFormData({...formData, electricals: event.target.value})}
-                        value={formData.electricals}
+                          type="text"
+                          onChange={(event)=>setFormData({...formData, clothing: event.target.value})}
+                          value={formData.clothing}
                       />
+                      <Button 
+                        variant="danger"
+                        onClick={()=>setFormData({...formData, clothing: ""})}
+                        >X
+                      </Button>
                     </InputGroup>
                   </Col>
                 </Row>
+                :
+                null
+              }
+              {
+                formData.electricals
+                ?
+                <Row className="my-1">
+                  <Col sm={10} md={9} lg={8}>
+                    <InputGroup className="mb-3">
+                      <InputGroup.Text>Electricals</InputGroup.Text>
+                        <Form.Control
+                          type="text"
+                          onChange={(event)=>setFormData({...formData, electricals: event.target.value})}
+                          value={formData.electricals}
+                        />
+                      <Button 
+                        variant="danger"
+                        onClick={()=>setFormData({...formData, electricals: ""})}
+                        >X
+                      </Button>
+                    </InputGroup>
+                  </Col>
+                </Row>
+                :
+                null
+              }
+              {
+                formData.furniture
+                ?
                 <Row className="my-1">
                   <Col sm={10} md={9} lg={8}>
                     <InputGroup className="mb-3">
@@ -92,9 +117,20 @@ function UpdateForm ( { listing, setListing, displayListingUpdateForm, displayPr
                           onChange={(event)=>setFormData({...formData, furniture: event.target.value})}
                           value={formData.furniture}
                       />
+                      <Button 
+                        variant="danger"
+                        onClick={()=>setFormData({...formData, furniture: ""})}
+                        >X
+                      </Button>
                     </InputGroup>
                   </Col>
                 </Row>
+                :
+                null
+              }
+              {
+                formData.garden
+                ?
                 <Row className="my-1">
                   <Col sm={10} md={9} lg={8}>
                     <InputGroup className="mb-3">
@@ -104,9 +140,20 @@ function UpdateForm ( { listing, setListing, displayListingUpdateForm, displayPr
                           onChange={(event)=>setFormData({...formData, garden: event.target.value})}
                           value={formData.garden}
                       />
+                      <Button 
+                        variant="danger"
+                        onClick={()=>setFormData({...formData, garden: ""})}
+                        >X
+                      </Button>
                     </InputGroup>
                   </Col>
                 </Row>
+                :
+                null
+              } 
+              {
+                formData.kids
+                ?
                 <Row className="my-1">
                   <Col sm={10} md={9} lg={8}>
                     <InputGroup className="mb-3">
@@ -116,9 +163,20 @@ function UpdateForm ( { listing, setListing, displayListingUpdateForm, displayPr
                           onChange={(event)=>setFormData({...formData, kids: event.target.value})}
                           value={formData.kids}
                       />
+                      <Button 
+                        variant="danger"
+                        onClick={()=>setFormData({...formData, kids: ""})}
+                        >X
+                      </Button>
                     </InputGroup>
                   </Col>
                 </Row>
+                :
+                null
+              }   
+              {
+                formData.kitchenware
+                ?
                 <Row className="my-1">
                   <Col sm={10} md={9} lg={8}>
                     <InputGroup className="mb-3">
@@ -128,9 +186,21 @@ function UpdateForm ( { listing, setListing, displayListingUpdateForm, displayPr
                           onChange={(event)=>setFormData({...formData, kitchenware: event.target.value})}
                           value={formData.kitchenware}
                       />
+                      <Button 
+                        variant="danger"
+                        onClick={()=>setFormData({...formData, kitchenware: ""})}
+                        >X
+                      </Button>
                     </InputGroup>
+                    
                   </Col>
                 </Row>
+                :
+                null
+              } 
+              {
+                formData.sports
+                ?
                 <Row className="my-1">
                   <Col sm={10} md={9} lg={8}>
                     <InputGroup className="mb-3">
@@ -140,9 +210,20 @@ function UpdateForm ( { listing, setListing, displayListingUpdateForm, displayPr
                           onChange={(event)=>setFormData({...formData, sports: event.target.value})}
                           value={formData.sports}
                       />
+                      <Button 
+                        variant="danger"
+                        onClick={()=>setFormData({...formData, sports: ""})}
+                        >X
+                      </Button>
                     </InputGroup>
                   </Col>
                 </Row>
+                :
+                null
+              }     
+              {
+                formData.otherItems
+                ?
                 <Row className="my-1">
                   <Col sm={10} md={9} lg={8}>
                     <InputGroup className="mb-3">
@@ -152,9 +233,17 @@ function UpdateForm ( { listing, setListing, displayListingUpdateForm, displayPr
                           onChange={(event)=>setFormData({...formData, otherItems: event.target.value})}
                           value={formData.otherItems}
                       />
+                      <Button 
+                        variant="danger"
+                        onClick={()=>setFormData({...formData, otherItems: ""})}
+                        >X
+                      </Button>
                     </InputGroup>
                   </Col>
                 </Row>
+                :
+                null
+              }    
               <br/>
               {
                   formData.clothing !== listing.clothing || 

@@ -58,9 +58,13 @@ export default function ListingIndex () {
                                         <Card.Subtitle className="text-muted">{`Last updated: ${listing.dateUpdated} ${listing.timeUpdated}`}</Card.Subtitle>
                                         <Card.Text className="mt-2">
                                             <ul>
+                                                { !listing.clothing ? null : <li>Clothing</li>}
                                                 { !listing.electricals ? null : <li>Electricals</li>} 
                                                 { !listing.furniture ? null : <li>Furniture</li>} 
+                                                { !listing.garden ? null : <li>Garden tools & items</li>}
+                                                { !listing.garden ? null : <li>Kids toys & accessories</li>}
                                                 { !listing.kitchenware ? null : <li>Kitchenware</li>} 
+                                                { !listing.garden ? null : <li>Sports & hobbies equipment</li>}
                                                 { !listing.otherItems ? null : <li>Other items</li>}           
                                             </ul>
                                         </Card.Text>

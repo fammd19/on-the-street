@@ -1,20 +1,6 @@
 {
   "listings": [
     {
-      "date": "2024-03-08",
-      "time": "00:27",
-      "address": "2 Rossie Steadings",
-      "suburb": "Perth",
-      "postcode": "PH20GA",
-      "kitchenware": "ABC",
-      "furniture": "",
-      "electricals": "EXAMPLE ELECTRICALS 2",
-      "otherItems": "",
-      "dateUpdated": "2024-02-29",
-      "timeUpdated": "18:02",
-      "id": 5
-    },
-    {
       "date": "2024-03-09",
       "time": "07:10",
       "address": "115 DENISON STREET",
@@ -164,16 +150,16 @@
       "address": "1  Bourke Street",
       "suburb": "Surry Hills",
       "postcode": "2000",
-      "kitchenware": "H",
+      "kitchenware": "",
       "furniture": "B",
-      "electricals": "X",
-      "otherItems": "O",
-      "dateUpdated": "",
-      "timeUpdated": "",
-      "clothing": "A",
-      "garden": "F",
-      "kids": "G",
-      "sports": "T",
+      "electricals": "",
+      "otherItems": "",
+      "dateUpdated": "2024-03-07",
+      "timeUpdated": "19:17",
+      "clothing": "",
+      "garden": "",
+      "kids": "",
+      "sports": "",
       "id": 16
     },
     {

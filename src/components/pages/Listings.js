@@ -1,6 +1,5 @@
 import { Outlet } from "react-router-dom"
-import { Link } from "react-router-dom"
-import { Button, Col, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import FindMap from "../FindMap";
 
 export default function Listings () {

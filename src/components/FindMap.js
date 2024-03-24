@@ -1,5 +1,3 @@
-
-
 function FindMap () {
 
     return(
