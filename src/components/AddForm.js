@@ -3,64 +3,34 @@ import { Button, Form, Col, Row, Alert } from 'react-bootstrap';
 import { useNavigate  } from "react-router-dom"
 
 
-function AddForm (
-  { formData,setFormData }
-) {
+function AddForm ( { formData,setFormData }) {
 
-    const [areOtherItems, setAreOtherItems] = useState(false)
-    const [isKitchenware, setIsKitchenware] = useState(false)
-    const [isFurniture, setIsFurniture] = useState(false)
+    const [isClothing, setIsClothing] = useState(false)
     const [isElectricals, setIsElectricals] = useState(false)
+    const [isFurniture, setIsFurniture] = useState(false)
+    const [isKitchenware, setIsKitchenware] = useState(false)
+    const [isKids, setIsKids] = useState(false)
+    const [isGarden, setIsGarden] = useState(false)
+    const [isSports, setIsSports] = useState(false)
+    const [isOther, setIsOther] = useState(false)
 
     const navigate = useNavigate();
 
-    function handleOthers () {
-        //Show others text input field if other checkbox is ticked
-        if (!areOtherItems) {
-            setAreOtherItems(true)
-            document.getElementById("otherItems").classList.remove("hide")
+    function handleCategory (event) {
+      let category = event.target.value.toLowerCase()
+        let categoryName = category.toLowerCase() + "Items";
+        let isCategory = eval("is" + category.charAt(0).toUpperCase() + category.slice(1));
+      
+        // Show or hide the element based on category state
+        if (!isCategory) {
+          eval("setIs" + category.charAt(0).toUpperCase() + category.slice(1) + "(true)");
+          document.getElementById(categoryName).classList.remove("hide");
         } else {
-            setAreOtherItems(false)
-            document.getElementById("otherItems").classList.add("hide")
-            formData.otherItems=""
+          eval("setIs" + category.charAt(0).toUpperCase() + category.slice(1) + "(false)");
+          document.getElementById(categoryName).classList.add("hide");
+          formData[category.toLowerCase()] = "";
         }
-    }
-
-    function handleKitchenware () {
-      //Show others text input field if other checkbox is ticked
-      if (!isKitchenware) {
-          setIsKitchenware(true)
-          document.getElementById("kitchenwareItems").classList.remove("hide")
-      } else {
-          setIsKitchenware(false)
-          document.getElementById("kitchenwareItems").classList.add("hide")
-          formData.kitchenware=""
       }
-    }
-
-    function handleFurniture () {
-      //Show others text input field if other checkbox is ticked
-      if (!isFurniture) {
-          setIsFurniture(true)
-          document.getElementById("furnitureItems").classList.remove("hide")
-      } else {
-          setIsFurniture(false)
-          document.getElementById("furnitureItems").classList.add("hide")
-          formData.furniture=""
-      }
-    }
-
-    function handleElectricals () {
-      //Show others text input field if other checkbox is ticked
-      if (!isElectricals) {
-          setIsElectricals(true)
-          document.getElementById("electricalsItems").classList.remove("hide")
-      } else {
-          setIsElectricals(false)
-          document.getElementById("electricalsItems").classList.add("hide")
-          formData.electricals=""
-      }
-    }
 
     function handleSubmit (event) {
         event.preventDefault();
@@ -107,7 +77,7 @@ function AddForm (
                   </Col>
                 </Row> 
                 <Row className="mx-1 mt-2">
-                  <Form.Check label="Electricals" className="checkbox"id="electricals" value="Electricals" type="checkbox" onChange={handleElectricals}/>
+                  <Form.Check label="Electricals" className="checkbox"id="electricals" value="Electricals" type="checkbox" onChange={handleCategory}/>
                   <div id="electricalsItems" className="hide mx-3">
                     <Col sm={7} md={6} lg={5}>
                       <Form.Label className="mb-0 text-muted" htmlFor="electricals-input">Please list electrical items:</Form.Label>
@@ -116,7 +86,7 @@ function AddForm (
                   </div>
                 </Row>
                 <Row className="mx-1 mt-2">
-                  <Form.Check label="Furniture" className="checkbox" id="furniture" value="Furniture" type="checkbox" onChange={handleFurniture}/>
+                  <Form.Check label="Furniture" className="checkbox" id="furniture" value="Furniture" type="checkbox" onChange={handleCategory}/>
                   <div id="furnitureItems" className="hide mx-3">
                     <Col sm={7} md={6} lg={5}>
                       <Form.Label className="mb-0 text-muted" htmlFor="furniture-input">Please list furniture:</Form.Label>
@@ -125,7 +95,7 @@ function AddForm (
                   </div>
                 </Row>
                 <Row className="mx-1 mt-2">
-                  <Form.Check label="Kitchenware" className="checkbox" id="kitchenware" value="Kitchenware" type="checkbox" onChange={handleKitchenware}/>
+                  <Form.Check label="Kitchenware" className="checkbox" id="kitchenware" value="Kitchenware" type="checkbox" onChange={handleCategory}/>
                   <div id="kitchenwareItems" className="hide mx-3">
                     <Col sm={7} md={6} lg={5}>
                       <Form.Label className="mb-0 text-muted" htmlFor="kitchenware-input">Please list kitchenware:</Form.Label>
@@ -133,8 +103,17 @@ function AddForm (
                     </Col>
                   </div>
                 </Row>
+                <Row className="mx-1 mt-2">
+                  <Form.Check label="Kids" className="checkbox" id="kids" value="Kids" type="checkbox" onChange={handleCategory}/>
+                  <div id="kidsItems" className="hide mx-3">
+                    <Col sm={7} md={6} lg={5}>
+                      <Form.Label className="mb-0 text-muted" htmlFor="kids-input">Please list kids items & accessories:</Form.Label>
+                      <Form.Control id="kids-input" type="text" value={formData.kids} onChange={(event)=>setFormData({...formData, kids: event.target.value})}/>
+                    </Col>
+                  </div>
+                </Row>
                 <Row className="mx-1 mt-2 mb-2">
-                  <Form.Check label="Other items" className="checkbox" id="others" value="Others" type="checkbox" onChange={handleOthers}/>
+                  <Form.Check label="Other items" className="checkbox" id="others" value="Other" type="checkbox" onChange={handleCategory}/>
                   <div id="otherItems" className="hide mx-3">
                     <Col sm={7} md={6} lg={5}>
                         <Form.Label className="mb-0 text-muted" htmlFor="other-input">Please list other items:</Form.Label>
@@ -156,3 +135,55 @@ function AddForm (
 }
 
 export default AddForm
+
+
+
+    // function handleKitchenware () {
+    //   //Show others text input field if other checkbox is ticked
+    //   if (!isKitchenware) {
+    //       setIsKitchenware(true)
+    //       document.getElementById("kitchenwareItems").classList.remove("hide")
+    //   } else {
+    //       setIsKitchenware(false)
+    //       document.getElementById("kitchenwareItems").classList.add("hide")
+    //       formData.kitchenware=""
+    //   }
+    // }
+
+    // function handleFurniture () {
+    //   //Show others text input field if other checkbox is ticked
+    //   if (!isFurniture) {
+    //       setIsFurniture(true)
+    //       document.getElementById("furnitureItems").classList.remove("hide")
+    //   } else {
+    //       setIsFurniture(false)
+    //       document.getElementById("furnitureItems").classList.add("hide")
+    //       formData.furniture=""
+    //   }
+    // }
+
+    // function handleElectricals () {
+    //   //Show others text input field if other checkbox is ticked
+    //   if (!isElectricals) {
+    //       setIsElectricals(true)
+    //       document.getElementById("electricalsItems").classList.remove("hide")
+    //   } else {
+    //       setIsElectricals(false)
+    //       document.getElementById("electricalsItems").classList.add("hide")
+    //       formData.electricals=""
+    //   }
+    // }
+
+        // function handleOthers () {
+    //     //Show others text input field if other checkbox is ticked
+    //     if (!areOtherItems) {
+    //         setAreOtherItems(true)
+    //         document.getElementById("otherItems").classList.remove("hide")
+    //     } else {
+    //         setAreOtherItems(false)
+    //         document.getElementById("otherItems").classList.add("hide")
+    //         formData.otherItems=""
+    //     }
+    // }
+
+

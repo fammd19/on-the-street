@@ -70,9 +70,13 @@ export default function ListingPage ( { formData,setFormData } ) {
                         </h3>
                         {
                             <ul>
+                                { !listing.clothing ? null : <li>Clothing: {listing.clothing}</li>} 
                                 { !listing.electricals ? null : <li>Electricals: {listing.electricals}</li>}  
                                 { !listing.furniture ? null : <li>Furniture: {listing.furniture}</li>}   
+                                { !listing.garden ? null : <li>Garden tools & accessories: {listing.garden}</li>} 
+                                { !listing.kids ? null : <li>Kids toys & accessories: {listing.kids}</li>}  
                                 { !listing.kitchenware ? null : <li>Kitchenware: {listing.kitchenware}</li>}  
+                                { !listing.sports ? null : <li>Spirts & hobbies: {listing.sports}</li>}  
                                 { !listing.otherItems ? null : <li>Other items: {listing.otherItems}</li>}           
                             </ul>
                         }

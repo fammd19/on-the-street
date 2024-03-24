@@ -23,9 +23,14 @@ function Filter ({ search, onSearchChange, onCategoryChange }) {
           <Col>
             <Form.Select  name="filter" onChange={onCategoryChange}>
               <option value="">Filter by category</option>
-              <option value="kitchenware">Kitchenware</option>
               <option value="clothing">Clothing</option>
               <option value="electricals">Electricals</option>
+              <option value="furniture">Furniture</option>
+              <option value="garden">Garden tools & items</option>
+              <option value="kids">Kids toys & accessories</option>
+              <option value="kitchenware">Kitchenware</option>
+              <option value="sports">Sports equipment & hobbies</option>
+              <option value="otherItems">Other items</option>
             </Form.Select>
           </Col>
         </Row>

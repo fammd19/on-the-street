@@ -20,11 +20,21 @@ export default function ListingIndex () {
         setSelectedCategory(event.target.value);
       }
 
-    const listingsToDisplay = listings
-    .filter(
-      (listing) => selectedCategory === "" || listing.selectedCategory !== "" 
-    )
-    .filter((listing) => (listing.suburb.toLowerCase().includes(search.toLowerCase())||listing.postcode.includes(search.toLowerCase())));
+      const listingsToDisplay = listings
+      .filter(
+          (listing) => {
+              if ( selectedCategory !== "" ) {
+              for (let key in listing) {
+                  if (key === selectedCategory && listing[key] !== "" ) {
+                      return listing
+                  }
+              }
+          } else {
+              return listing   
+          }
+          }
+      )
+      .filter((listing) => (listing.suburb.toLowerCase().includes(search.toLowerCase())||listing.postcode.includes(search.toLowerCase())));
 
     return (
         <div className="mx-4">

@@ -111,6 +111,35 @@
       "dateUpdated": "",
       "timeUpdated": "",
       "id": 10
+    },
+    {
+      "date": "2024-03-24",
+      "time": "01:01",
+      "address": "115 DENISON STREET",
+      "suburb": "BONDI JUNCTION",
+      "postcode": "2022",
+      "kitchenware": "",
+      "furniture": "Sofa",
+      "electricals": "",
+      "otherItems": "AAA, BBB, CCC",
+      "dateUpdated": "",
+      "timeUpdated": "",
+      "id": 11
+    },
+    {
+      "date": "2024-03-16",
+      "time": "12:24",
+      "address": "Unit 9, 16 Military Road",
+      "suburb": "Sydney",
+      "postcode": "2026",
+      "kitchenware": "",
+      "furniture": "",
+      "electricals": "[e1], [e2],[e3],[e5],[e6]",
+      "otherItems": "Other 1, other 2",
+      "dateUpdated": "",
+      "timeUpdated": "",
+      "other": "",
+      "id": 12
     }
   ]
 }
