@@ -12,10 +12,6 @@ function Share ( { formData,setFormData, } ) {
             address: "",
             suburb:"",
             postcode:"",
-            kitchenware: "",
-            furniture: "",
-            electricals: "",
-            otherItems: "",
             dateUpdated: "",
             timeUpdated: "",
         })
