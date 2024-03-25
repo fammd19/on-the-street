@@ -1,4 +1,3 @@
-import { mapsApiKey, mapId } from "../Keys"
 import { useEffect, useState } from "react";
 import {
   APIProvider,
@@ -18,7 +17,7 @@ export default function ListingMap ({address}) {
     const [position, setPosition] = useState({ lat: 0, lng: 0 });
     const [open, setOpen] = useState(false);
 
-    setKey("");
+    setKey(process.env.REACT_APP_GOOGLE_MAPS_API);
 
     useEffect (()=> {
         fromAddress(address)
@@ -30,9 +29,9 @@ export default function ListingMap ({address}) {
     },[address])
 
   return (
-    <APIProvider apiKey="">
+    <APIProvider apiKey={process.env.REACT_APP_GOOGLE_MAPS_API}>
       <div style={{ height: "25rem", width: "25rem" }}>
-        <Map zoom={15} center={position} mapId={""}>
+        <Map zoom={15} center={position} mapId={process.env.REACT_APP_GOOGLE_MAP_ID}>
           <AdvancedMarker position={position} onClick={() => setOpen(true)}>
             <Pin
               background={"grey"}
