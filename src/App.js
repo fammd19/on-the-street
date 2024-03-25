@@ -33,8 +33,6 @@ function App() {
     timeUpdated: ""
   })
 
-  console.log(process.env.REACT_APP_GOOGLE_MAPS_API)
-
   return (
     <BrowserRouter>
         <Navigation />
