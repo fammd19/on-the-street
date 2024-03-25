@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-import { Button, Card, Col} from 'react-bootstrap';
+import { Button, Card, Col, Row} from 'react-bootstrap';
 import Filter from "../Filter";
 
 
@@ -48,11 +48,12 @@ export default function ListingIndex () {
                 onSearchChange={setSearch}
                 onCategoryChange={handleCategoryChange}
                 />
-                <Col lg={12} className="listing">
+                <Row>
                     {
                     listingsToDisplay.map ((listing) => 
                         { return (
-                                <Card  className="my-3" key={listing.id}>
+                            <Col lg={6} className="listing">
+                                <Card  className="my-1" key={listing.id}>
                                     <Card.Body>
                                         <Card.Title>{`${listing.suburb} ${listing.postcode}`}</Card.Title>
                                         <Card.Subtitle className="text-muted">{`Last updated: ${listing.dateUpdated} ${listing.timeUpdated}`}</Card.Subtitle>
@@ -71,11 +72,12 @@ export default function ListingIndex () {
                                         <Link to={`/listings/${listing.id}`}><Button variant="primary">More details</Button></Link>
                                     </Card.Body>
                                 </Card>
+                            </Col>
                         )
                     })
                     }
 
-                </Col>
+                </Row>
                 </>
                 :
                 <p>No listing found</p>

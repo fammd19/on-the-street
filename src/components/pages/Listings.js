@@ -5,7 +5,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 export default function Listings () {
     return (
         <>
-            <Container  className="my-3 mx-0">
+            <Container className="my-3 mx-0">
                 {/* <Col sm={10} md={8} lg={6}> */}
                     <Outlet/>
                 {/* </Col> */}
