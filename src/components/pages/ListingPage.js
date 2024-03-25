@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { useNavigate, Link } from 'react-router-dom';
-import { Button, Alert } from 'react-bootstrap';
+import { Button, Alert, Col, Row } from 'react-bootstrap';
 import UpdateForm from "../UpdateForm"
+import ListingMap from "../ListingMap"
 
-export default function ListingPage ( { formData,setFormData } ) {
+export default function ListingPage ( { formData, setFormData } ) {
     const {id} = useParams();
     const [listing, setListing] = useState (null)
+    let address = `${formData.address}, ${formData.suburb}, ${formData.postcode}`
 
     const navigate = useNavigate();
 
@@ -15,7 +17,6 @@ export default function ListingPage ( { formData,setFormData } ) {
         .then(res => res.json())
         .then(json => setListing(json))
     }, [id])
-
     
     function displayListingUpdateForm () {
         const formDiv = document.getElementById("listing-upate-form");
@@ -53,8 +54,9 @@ export default function ListingPage ( { formData,setFormData } ) {
             </div>
             {
                 listing
-                ?
-                <main className="mx-5">
+                ?  
+                <Row className="mx-5">
+                    <Col sm={10} md={8} lg={6}>
                     <h1>Listing details</h1>
                     <div className="listing" value={listing.id}>
                         {/* Check if need value={listingID} expect not */}
@@ -94,7 +96,12 @@ export default function ListingPage ( { formData,setFormData } ) {
                             />
                         </div>
                     </div>
-            </main>
+                    
+                    </Col>
+                    <Col sm={10} md={8} lg={6}>
+                        <ListingMap address={address} />  
+                    </Col>
+                </Row>
                 :
                 null
             }

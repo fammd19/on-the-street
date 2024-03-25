@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Button, Form, Col, Row, InputGroup } from 'react-bootstrap';
 import { useNavigate  } from "react-router-dom"
 
-
 function AddForm ( { formData,setFormData }) {
 
     const [isClothing, setIsClothing] = useState(false)

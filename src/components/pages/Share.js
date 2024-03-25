@@ -13,7 +13,7 @@ function Share ( { formData,setFormData, } ) {
             suburb:"",
             postcode:"",
             dateUpdated: "",
-            timeUpdated: "",
+            timeUpdated: ""
         })
     },[])
 
