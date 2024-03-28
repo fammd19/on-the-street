@@ -8,25 +8,11 @@
       "postcode": "2050",
       "kitchenware": "Mugs",
       "furniture": "",
-      "electricals": "Blender",
-      "otherItems": "",
-      "dateUpdated": "",
-      "timeUpdated": "",
-      "id": 7
-    },
-    {
-      "date": "2024-03-24",
-      "time": "01:01",
-      "address": "115 DENISON STREET",
-      "suburb": "BONDI JUNCTION",
-      "postcode": "2022",
-      "kitchenware": "",
-      "furniture": "Sofa",
       "electricals": "",
-      "otherItems": "AAA, BBB, CCC",
-      "dateUpdated": "",
-      "timeUpdated": "",
-      "id": 11
+      "otherItems": "",
+      "dateUpdated": "2024-03-08",
+      "timeUpdated": "17:10",
+      "id": 7
     },
     {
       "date": "2024-03-16",

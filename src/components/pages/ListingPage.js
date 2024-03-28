@@ -4,6 +4,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { Button, Alert, Col, Row } from 'react-bootstrap';
 import UpdateForm from "../UpdateForm"
 import SingleListingMap from "../SingleListingMap"
+import icon from "../assets/success-icon.svg"
 
 export default function ListingPage ( { formData, setFormData } ) {
     const {id} = useParams();
@@ -87,8 +88,8 @@ export default function ListingPage ( { formData, setFormData } ) {
                             <Button className="mx-1 my-1" id="update-listing-btn" variant="warning" onClick={displayListingUpdateForm}>Update listing</Button>
                             <Button className="mx-1 my-1" variant="danger" onClick={handleDelete}>Mark as taken</Button>
                         </div>
-                        <Alert variant="danger" id="success-delete" className="hide">Thanks! This has been marked as taken.</Alert>
-                        <Alert variant="success" id="success-prompt" className="hide my-2">Form submitted successfully</Alert>
+                        <Alert variant="danger" id="success-delete" className="hide"><img alt="Success icon" src={icon} className="icon"/>Thanks! This has been marked as taken.</Alert>
+                        <Alert variant="success" id="success-prompt" className="hide my-2"><img alt="Success icon" src={icon} className="icon"/>Listing updated successfully</Alert>
                         <div id="listing-upate-form" className="hide">
                             <UpdateForm 
                                 listing={listing} setListing={setListing} displayListingUpdateForm={displayListingUpdateForm} displayPrompt={displayPrompt}

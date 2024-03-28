@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { Button, Card, Col, Row} from 'react-bootstrap';
 import Filter from "../Filter";
+import icon from "../assets/listing-icon.svg"
 
 
 export default function ListingIndex () {
@@ -55,7 +56,7 @@ export default function ListingIndex () {
                             <Col lg={6} className="listing">
                                 <Card  className="my-1" key={listing.id}>
                                     <Card.Body>
-                                        <Card.Title>{`${listing.suburb} ${listing.postcode}`}</Card.Title>
+                                        <Card.Title><img src={icon} alt="Listing icon" className="icon"/>{`${listing.suburb} ${listing.postcode}`}</Card.Title>
                                         <Card.Subtitle className="text-muted">{`Last updated: ${listing.dateUpdated} ${listing.timeUpdated}`}</Card.Subtitle>
                                         <Card.Text className="mt-2">
                                             <ul>
