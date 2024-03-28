@@ -46,15 +46,15 @@ export default function ListingMap () {
         process.env.REACT_APP_GOOGLE_MAPS_API_KEY
         ?
         <>
-            <Link to="/listings"><Button className="mx-1 my-1">See listings</Button></Link>
+            <Link to="/listings"><Button className="mx-1 my-1 mb-5">See listings</Button></Link>
             <APIProvider apiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
                 <OverlayTrigger 
                     placement="top" 
-                    overlay={<Tooltip> &#8592; go to listings</Tooltip>}
+                    overlay={<Tooltip> &#8593; go to listings</Tooltip>}
                     delay={{ show: 250, hide: 400 }}
                     >
-                        <div style={{ height: "25rem", width: "25rem" }}>
-                            <Map defaultZoom={10} defaultCenter={position} mapId={process.env.REACT_APP_GOOGLE_MAPS_MAP_ID}>
+                        <div style={{ height: "25rem", width: "70%", margin:"auto" }}>
+                            <Map defaultZoom={12} defaultCenter={position} mapId={process.env.REACT_APP_GOOGLE_MAPS_MAP_ID}>
                                 {
                                     coordinatesList.map ((listing) => {
                                         console.log(listing)

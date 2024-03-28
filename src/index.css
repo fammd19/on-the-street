@@ -17,8 +17,11 @@ code {
 	display: none;
 }
 
-/*===Nav===*/
+main {
+	margin: 20px;
+}
 
+/*===Nav===*/
 .navbar-dark {
 	background-color: slategray;
 }
@@ -27,6 +30,12 @@ code {
 #success-prompt {
 	color: green;
 	font-weight: bold;
+}
+
+/*===Nav===*/
+.home-container {
+	text-align: center;
+	width: 60%;
 }
 
 /*===Listings===*/
