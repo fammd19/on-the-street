@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# On The Street
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Introduction
 
-In the project directory, you can run:
+In Sydney, thousands of useful items are thrown onto the streets each day. These items are used but often in good working order and end up in landfill. On The Street seeks to reduce this wasteags by allowing people to post items they find or put out themseleves anonymously for other users to search and find.
 
-### `npm start`
+Users who collect items can then update the listings.
 
-Runs the app in the development mode.\
+This is the first iteration of the app with future enhancements to include:
+
+- The ability to add photos, and for those photos to be interpreted by AI to reduce manual input of listing out the items
+- Address validation
+
+## Installation
+
+To use the app:
+
+1. Clone the repo locally
+2. Run `npm i`
+3. Obtain an API key and map ID (see note below) for Google Maps and add this to a new .env.local file in the root directory:
+   `REACT_APP_GOOGLE_MAPS_API_KEY=XXXXX`
+   `REACT_APP_GOOGLE_MAPS_MAP_ID=XXXXX`
+4. Run the app using:
+   `npm start`
+   `npm run server`
+   Please see notes below for further details on these commands
+
+## API Keys
+
+The app will run without a Google Maps API key however the listings maps will not be available. To obtain a Google Maps API key, head to https://console.cloud.google.com/google/maps-apis/overview.
+
+The API key is used for geocoding locations and displaying the individual and multi listing map. There is a further map ID key.
+
+## Run the app
+
+`npm start` should be run in the project directory. This will run the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The app utilises json-server which can be started with: `npm run server`. This will run the mock server on [http://localhost:4000](http://localhost:4000). `npm run server` is a shortcut for json-server --watch src/db.json --port=4000
