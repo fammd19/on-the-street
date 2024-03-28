@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { Card, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Card, OverlayTrigger, Tooltip, Button } from 'react-bootstrap';
+import image from "./assets/placeholder-image.jpeg"
+import { Link } from "react-router-dom"
 import {
   APIProvider,
   Map,
@@ -21,7 +22,6 @@ export default function ListingMap () {
 
     setKey(process.env.REACT_APP_GOOGLE_MAPS_API_KEY)
 
-
     useEffect(() => {
         setKey(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
         fetch("http://localhost:4000/listings")
@@ -40,61 +40,47 @@ export default function ListingMap () {
             .catch(error => console.log(error));
     }, []);
 
-    // useEffect (()=> {
-    //     fetch("http://localhost:4000/listings")
-    //     .then(res => res.json())
-    //     .then(listings => listings.map(listing => {
-    //         let fullAddress = `${listing.address}, ${listing.suburb}, ${listing.postcode}`
-    //         fromAddress(fullAddress)
-    //         .then(({ results }) => {
-    //             coordinatesList.push(results[0].geometry.location)
-    //             setCoordinatesList(coordinatesList)
-    //         })
-    //     }))
-    //     .catch(error => console.log(error))
-    // },[setCoordinatesList])
-
   return (
     <>
         {
         process.env.REACT_APP_GOOGLE_MAPS_API_KEY
         ?
-        <APIProvider apiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
-            <OverlayTrigger 
-                placement="top" 
-                overlay={<Tooltip> Click to go to listings</Tooltip>}
-                >
-            <div style={{ height: "25rem", width: "25rem" }}>
-                
-                    <Link to="/listings">
-                        <Map zoom={10} center={position} mapId={process.env.REACT_APP_GOOGLE_MAPS_MAP_ID}>
-                            {
-                                coordinatesList.map ((listing) => {
-                                    console.log(listing)
-                                    return (
-                                        <AdvancedMarker position={listing}>
-                                            <Pin
-                                            background={"grey"}
-                                            borderColor={"black"}
-                                            glyphColor={"orange"}
-                                            />
-                                        </AdvancedMarker>
+        <>
+            <Link to="/listings"><Button className="mx-1 my-1">See listings</Button></Link>
+            <APIProvider apiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
+                <OverlayTrigger 
+                    placement="top" 
+                    overlay={<Tooltip> &#8592; go to listings</Tooltip>}
+                    delay={{ show: 250, hide: 400 }}
+                    >
+                        <div style={{ height: "25rem", width: "25rem" }}>
+                            <Map defaultZoom={10} defaultCenter={position} mapId={process.env.REACT_APP_GOOGLE_MAPS_MAP_ID}>
+                                {
+                                    coordinatesList.map ((listing) => {
+                                        console.log(listing)
+                                        return (
+                                            <AdvancedMarker key={listing.lat} position={listing}>
+                                                <Pin
+                                                background={"grey"}
+                                                borderColor={"black"}
+                                                glyphColor={"orange"}
+                                                />
+                                            </AdvancedMarker>
+                                        )
+                                    }
                                     )
                                 }
-                                )
-                            }
                         </Map>
-                    </Link>
-                
-            </div>
-            </OverlayTrigger>
-        </APIProvider>
+                    </div>
+                </OverlayTrigger>
+            </APIProvider>
+        </>
         :
         <Card style={{ width:"18rem" }}>
-          <Card.Img variant="top" src="https://picsum.photos/100" />
+          <Card.Img variant="top" src={image} />
           <Card.Body>
             <Card.Title>
-              Sorry, the map is unavailble right now. Please enjoy this picture instead while we get it fixed...
+              Sorry, the map is unavailble right now. Please enjoy the view while we get it fixed...
             </Card.Title>
           </Card.Body>
         </Card>

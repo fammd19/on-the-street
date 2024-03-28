@@ -28,8 +28,6 @@ function UpdateForm ( { listing, setListing, displayListingUpdateForm, displayPr
           displayListingUpdateForm();
     }
 
-
-  
     return (
         <>
             <Form className="mt-3" onSubmit={handleSubmit}>
@@ -46,7 +44,7 @@ function UpdateForm ( { listing, setListing, displayListingUpdateForm, displayPr
                     />
                   </InputGroup>
                 </Col>
-                <Col sm={7} md={6} lg={5}>
+                <Col sm={7} md={5} lg={5}>
                   <InputGroup className="mb-3">
                     <InputGroup.Text>Time</InputGroup.Text>
                     <Form.Control

@@ -24,6 +24,7 @@ function AddForm ( { formData,setFormData }) {
         // Show or hide the element based on category state
         if (!isCategory) {
           eval("setIs" + category.charAt(0).toUpperCase() + category.slice(1) + "(true)");
+          formData[category.toLowerCase()] = "";
           document.getElementById(categoryName).classList.remove("hide");
           document.getElementById(focusId).focus();
         } else {
@@ -51,7 +52,7 @@ function AddForm ( { formData,setFormData }) {
         <>
             <Form className="mt-3" onSubmit={handleSubmit}>
                 <Row>
-                  <Col sm={5} md={4} lg={3}>
+                  <Col sm={6} md={5} lg={4}>
                     <InputGroup className="mb-3">
                       <InputGroup.Text id="date-input">Date found</InputGroup.Text>
                       <Form.Control
@@ -63,7 +64,7 @@ function AddForm ( { formData,setFormData }) {
                       />
                     </InputGroup>
                   </Col>
-                  <Col sm={5} md={4} lg={3}>
+                  <Col sm={6} md={5} lg={4}>
                   <InputGroup className="mb-3">
                     <InputGroup.Text id="time-input">Time found</InputGroup.Text>
                       <Form.Control
@@ -77,7 +78,7 @@ function AddForm ( { formData,setFormData }) {
                   </Col>
                 </Row>
                 <Row>
-                  <Col sm={8} md={7} lg={6}>
+                  <Col sm={12} md={10} lg={8}>
                     <InputGroup className="mb-3">
                       <InputGroup.Text id="address-input">Address</InputGroup.Text>
                         <Form.Control
@@ -91,7 +92,7 @@ function AddForm ( { formData,setFormData }) {
                  </Col>
                 </Row>                
                 <Row>
-                  <Col sm={5} md={4} lg={3}>
+                  <Col sm={6} md={5} lg={4}>
                     <InputGroup className="mb-3">
                         <InputGroup.Text id="suburb-input">Suburb</InputGroup.Text>
                           <Form.Control
@@ -103,7 +104,7 @@ function AddForm ( { formData,setFormData }) {
                           />
                     </InputGroup>
                   </Col>
-                  <Col sm={5} md={4} lg={3}>
+                  <Col sm={6} md={5} lg={4}>
                     <InputGroup className="mb-3">
                         <InputGroup.Text id="postcode-input">Postcode</InputGroup.Text>
                           <Form.Control
@@ -120,7 +121,7 @@ function AddForm ( { formData,setFormData }) {
                   <Col sm={3} md={2} lg={1}>
                     <Form.Check label="Clothing" className="checkbox mt-1" id="clothing" value="Clothing" type="checkbox" onChange={handleCategory}/>
                   </Col>
-                  <Col sm={9} md={7} lg={5}>
+                  <Col sm={9} md={7} lg={6}>
                   <div id="clothingItems" className="hide mx-3 mb-2">
                       <Form.Control 
                         placeholder="Please list all items e.g. 3 x womens T-shirt, jumper..." 
@@ -137,7 +138,7 @@ function AddForm ( { formData,setFormData }) {
                   <Col sm={3} md={2} lg={1}>
                     <Form.Check label="Electricals" className="checkbox mt-1" id="electricals" value="Electricals" type="checkbox" onChange={handleCategory}/>
                   </Col>
-                  <Col sm={9} md={7} lg={5}>
+                  <Col sm={9} md={7} lg={6}>
                     <div id="electricalsItems" className="hide mx-3 mb-2">
                       <Form.Control 
                         placeholder="Please list all items e.g. blender, iPhone charger..." 
@@ -153,7 +154,7 @@ function AddForm ( { formData,setFormData }) {
                   <Col sm={3} md={2} lg={1}>
                     <Form.Check label="Furniture" className="checkbox mt-1" id="furniture" value="Furniture" type="checkbox" onChange={handleCategory}/>
                   </Col>
-                  <Col sm={9} md={7} lg={5}>
+                  <Col sm={9} md={7} lg={6}>
                     <div id="furnitureItems" className="hide mx-3 mb-2">
                       <Form.Control 
                         placeholder="Please list all items e.g. 2 x bedside table, sofa"
@@ -169,7 +170,7 @@ function AddForm ( { formData,setFormData }) {
                   <Col sm={3} md={2} lg={1}>
                     <Form.Check label="Garden" className="checkbox mt-1" id="garden" value="Garden" type="checkbox" onChange={handleCategory}/>
                   </Col>
-                  <Col sm={9} md={7} lg={5}>
+                  <Col sm={9} md={7} lg={6}>
                     <div id="gardenItems" className="hide mx-3 mb-2">
                       <Form.Control 
                         placeholder="Please list all items e.g. plant pots, spade..."
@@ -185,7 +186,7 @@ function AddForm ( { formData,setFormData }) {
                   <Col sm={3} md={2} lg={1}>
                     <Form.Check label="Kitchenware" className="checkbox mt-1" id="kitchenware" value="Kitchenware" type="checkbox" onChange={handleCategory}/>
                   </Col>
-                  <Col sm={9} md={7} lg={5}>
+                  <Col sm={9} md={7} lg={6}>
                     <div id="kitchenwareItems" className="hide mx-3 mb-2">
                       <Form.Control 
                         placeholder="Please list all items e.g. wine glasses, cutlery"
@@ -201,7 +202,7 @@ function AddForm ( { formData,setFormData }) {
                   <Col sm={3} md={2} lg={1}>
                     <Form.Check label="Kids" className="checkbox mt-1" id="kids" value="Kids" type="checkbox" onChange={handleCategory}/>
                   </Col>
-                  <Col sm={9} md={7} lg={5}>
+                  <Col sm={9} md={7} lg={6}>
                     <div id="kidsItems" className="hide mx-3 mb-2">
                       <Form.Control 
                         placeholder="Please list all items e.g. high chair, abacus.."
@@ -218,7 +219,7 @@ function AddForm ( { formData,setFormData }) {
                   <Col sm={3} md={2} lg={1}>
                     <Form.Check label="Sports" className="checkbox mt-1" id="sports" value="Sports" type="checkbox" onChange={handleCategory}/>
                   </Col>
-                  <Col sm={9} md={7} lg={5}>
+                  <Col sm={9} md={7} lg={6}>
                     <div id="sportsItems" className="hide mx-3 mb-2">
                       <Form.Control 
                         placeholder="Please list all items e.g. football, golf clubs.."
@@ -235,7 +236,7 @@ function AddForm ( { formData,setFormData }) {
                   <Col sm={3} md={2} lg={1}>
                     <Form.Check label="Other" className="checkbox mt-1" id="others" value="Other" type="checkbox" onChange={handleCategory}/>
                   </Col>
-                  <Col sm={9} md={7} lg={5}>
+                  <Col sm={9} md={7} lg={6}>
                     <div id="otherItems" className="hide mx-3 mb-2">
                         <Form.Control 
                           placeholder="Please add all miscallaneous items"

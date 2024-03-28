@@ -1,5 +1,4 @@
 import { Container } from 'react-bootstrap';
-import FindMap from '../FindMap';
 import MultiListingMap from "../MultiListingMap"
 
 function Home () {

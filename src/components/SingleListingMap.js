@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import image from "./assets/placeholder-image.jpeg"
 import { Card } from 'react-bootstrap';
 import {
   APIProvider,
@@ -25,7 +26,6 @@ export default function ListingMap ({address}) {
         .then(({ results }) => {
           const {lat, lng} = results[0].geometry.location;
           setPosition({lat,lng})
-          console.log(position)
         })
         .catch(error => console.log(error))
     },[address])
@@ -37,7 +37,7 @@ export default function ListingMap ({address}) {
         ?
         <APIProvider apiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
         <div style={{ height: "25rem", width: "25rem" }}>
-            <Map zoom={15} center={position} mapId={process.env.REACT_APP_GOOGLE_MAPS_MAP_ID}>
+            <Map defaultZoom={15} center={position} mapId={process.env.REACT_APP_GOOGLE_MAPS_MAP_ID}>
             <AdvancedMarker position={position} onClick={() => setOpen(true)}>
                 <Pin
                 background={"grey"}
@@ -55,10 +55,10 @@ export default function ListingMap ({address}) {
         </APIProvider>
         :
         <Card style={{ width:"18rem" }}>
-          <Card.Img variant="top" src="https://picsum.photos/100" />
+          <Card.Img variant="top" src={image} />
           <Card.Body>
             <Card.Title>
-              Sorry, map unavailble for this listing.  Please enjoy this picture instead while we get it fixed...
+              Sorry, the map is unavailble right now. Please enjoy the view while we get it fixed...
             </Card.Title>
           </Card.Body>
         </Card>

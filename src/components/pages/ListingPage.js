@@ -56,7 +56,7 @@ export default function ListingPage ( { formData, setFormData } ) {
                 listing
                 ?  
                 <Row className="mx-5">
-                    <Col sm={10} md={8} lg={6}>
+                    <Col sm={12} md={10} lg={8}>
                     <h1>Listing details</h1>
                     <div className="listing" value={listing.id}>
                         {/* Check if need value={listingID} expect not */}
@@ -78,14 +78,14 @@ export default function ListingPage ( { formData, setFormData } ) {
                                 { !listing.garden ? null : <li>Garden tools & accessories: {listing.garden}</li>} 
                                 { !listing.kids ? null : <li>Kids toys & accessories: {listing.kids}</li>}  
                                 { !listing.kitchenware ? null : <li>Kitchenware: {listing.kitchenware}</li>}  
-                                { !listing.sports ? null : <li>Spirts & hobbies: {listing.sports}</li>}  
+                                { !listing.sports ? null : <li>Sports & hobbies: {listing.sports}</li>}  
                                 { !listing.otherItems ? null : <li>Other items: {listing.otherItems}</li>}           
                             </ul>
                         }
                         <div>
-                            <a target="_blank" rel="noreferrer" href={`https://www.google.com/maps/place/${listing.address}-${listing.suburb}-${listing.postcode}`}><Button className="mx-1" variant="success">Get directions</Button></a>
-                            <Button className="mx-1" id="update-listing-btn" variant="warning" onClick={displayListingUpdateForm}>Update listing</Button>
-                            <Button className="mx-1" variant="danger" onClick={handleDelete}>Mark as taken</Button>
+                            <a target="_blank" rel="noreferrer" href={`https://www.google.com/maps/place/${listing.address}-${listing.suburb}-${listing.postcode}`}><Button className="mx-1 my-1" variant="success">Get directions</Button></a>
+                            <Button className="mx-1 my-1" id="update-listing-btn" variant="warning" onClick={displayListingUpdateForm}>Update listing</Button>
+                            <Button className="mx-1 my-1" variant="danger" onClick={handleDelete}>Mark as taken</Button>
                         </div>
                         <Alert variant="danger" id="success-delete" className="hide">Thanks! This has been marked as taken.</Alert>
                         <Alert variant="success" id="success-prompt" className="hide my-2">Form submitted successfully</Alert>
@@ -98,7 +98,7 @@ export default function ListingPage ( { formData, setFormData } ) {
                     </div>
                     
                     </Col>
-                    <Col sm={10} md={8} lg={6}>
+                    <Col sm={8} md={6} lg={4}>
                         <SingleListingMap address={address} />  
                     </Col>
                 </Row>
