@@ -1,5 +1,6 @@
 import { Container } from 'react-bootstrap';
-import FindMap from '../FindMap'
+import FindMap from '../FindMap';
+import MultiListingMap from "../MultiListingMap"
 
 function Home () {
     return (
@@ -9,7 +10,7 @@ function Home () {
                 <p>Across Sydney, there's heaps of good quality items being thrown onto the street, awaiting council collections, and ending up in landfill. We're on a mission to save them from the tip by helping you to find what you're looking for.</p>
                 <p>Street saving is a win-win: Save yourself some money and save the environment along the way.</p>
             </div>
-            <FindMap />
+            <MultiListingMap />
         </Container>
     )
 }

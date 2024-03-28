@@ -1,5 +1,6 @@
 function FindMap () {
 
+    //Fetch all of the listings and loop through the address, pass it to geocode and then add those to the map
     return(
         <iframe
             className="map"

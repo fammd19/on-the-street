@@ -8,10 +8,10 @@ function Filter ({ search, onSearchChange, onCategoryChange }) {
   }
 
   return (
-    <Form className="mx-2">
+    <Form >
       <div className="Filter">
-        <Row>
-          <Col>
+        <Row className="justify-content-md-center">
+          <Col sm={5} md={4} lg={3} className="mb-2">
             <Form.Control
               type="text"
               name="search"
@@ -20,7 +20,7 @@ function Filter ({ search, onSearchChange, onCategoryChange }) {
               onChange={handleSearchChange}
             />
           </Col>
-          <Col>
+          <Col sm={5} md={4} lg={3} className="mb-2">
             <Form.Select  name="filter" onChange={onCategoryChange}>
               <option value="">Filter by category</option>
               <option value="clothing">Clothing</option>

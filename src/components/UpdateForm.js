@@ -32,10 +32,9 @@ function UpdateForm ( { listing, setListing, displayListingUpdateForm, displayPr
   
     return (
         <>
-            
             <Form className="mt-3" onSubmit={handleSubmit}>
               <Row>
-                <Col sm={6} md={5} lg={4}>
+                <Col sm={7} md={6} lg={6}>
                   <InputGroup className="mb-3">
                     <InputGroup.Text id="date-update">Date</InputGroup.Text>
                     <Form.Control
@@ -47,7 +46,7 @@ function UpdateForm ( { listing, setListing, displayListingUpdateForm, displayPr
                     />
                   </InputGroup>
                 </Col>
-                <Col sm={6} md={5} lg={4}>
+                <Col sm={7} md={6} lg={5}>
                   <InputGroup className="mb-3">
                     <InputGroup.Text>Time</InputGroup.Text>
                     <Form.Control
@@ -63,7 +62,7 @@ function UpdateForm ( { listing, setListing, displayListingUpdateForm, displayPr
                 formData.clothing 
                 ?
                 <Row className="my-1">
-                  <Col sm={10} md={9} lg={8}>
+                  <Col sm={11} md={11} lg={11}>
                     <InputGroup className="mb-3">
                       <InputGroup.Text>Clothing</InputGroup.Text>
                       <Form.Control
@@ -86,7 +85,7 @@ function UpdateForm ( { listing, setListing, displayListingUpdateForm, displayPr
                 formData.electricals
                 ?
                 <Row className="my-1">
-                  <Col sm={10} md={9} lg={8}>
+                  <Col sm={11} md={11} lg={11}>
                     <InputGroup className="mb-3">
                       <InputGroup.Text>Electricals</InputGroup.Text>
                         <Form.Control
@@ -109,7 +108,7 @@ function UpdateForm ( { listing, setListing, displayListingUpdateForm, displayPr
                 formData.furniture
                 ?
                 <Row className="my-1">
-                  <Col sm={10} md={9} lg={8}>
+                  <Col sm={11} md={11} lg={11}>
                     <InputGroup className="mb-3">
                       <InputGroup.Text>Furniture</InputGroup.Text>
                       <Form.Control
@@ -132,7 +131,7 @@ function UpdateForm ( { listing, setListing, displayListingUpdateForm, displayPr
                 formData.garden
                 ?
                 <Row className="my-1">
-                  <Col sm={10} md={9} lg={8}>
+                  <Col sm={11} md={11} lg={11}>
                     <InputGroup className="mb-3">
                       <InputGroup.Text>Garden</InputGroup.Text>
                       <Form.Control
@@ -155,7 +154,7 @@ function UpdateForm ( { listing, setListing, displayListingUpdateForm, displayPr
                 formData.kids
                 ?
                 <Row className="my-1">
-                  <Col sm={10} md={9} lg={8}>
+                  <Col sm={11} md={11} lg={11}>
                     <InputGroup className="mb-3">
                       <InputGroup.Text>Kids</InputGroup.Text>
                       <Form.Control
@@ -178,7 +177,7 @@ function UpdateForm ( { listing, setListing, displayListingUpdateForm, displayPr
                 formData.kitchenware
                 ?
                 <Row className="my-1">
-                  <Col sm={10} md={9} lg={8}>
+                  <Col sm={11} md={11} lg={11}>
                     <InputGroup className="mb-3">
                       <InputGroup.Text>Kitchenware</InputGroup.Text>
                       <Form.Control
@@ -202,7 +201,7 @@ function UpdateForm ( { listing, setListing, displayListingUpdateForm, displayPr
                 formData.sports
                 ?
                 <Row className="my-1">
-                  <Col sm={10} md={9} lg={8}>
+                  <Col sm={11} md={11} lg={11}>
                     <InputGroup className="mb-3">
                       <InputGroup.Text>Sports</InputGroup.Text>
                       <Form.Control
@@ -225,7 +224,7 @@ function UpdateForm ( { listing, setListing, displayListingUpdateForm, displayPr
                 formData.otherItems
                 ?
                 <Row className="my-1">
-                  <Col sm={10} md={9} lg={8}>
+                  <Col sm={11} md={11} lg={11}>
                     <InputGroup className="mb-3">
                       <InputGroup.Text>Other</InputGroup.Text>
                       <Form.Control

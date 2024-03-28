@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 import { useNavigate, Link } from 'react-router-dom';
 import { Button, Alert, Col, Row } from 'react-bootstrap';
 import UpdateForm from "../UpdateForm"
-import ListingMap from "../ListingMap"
+import SingleListingMap from "../SingleListingMap"
 
 export default function ListingPage ( { formData, setFormData } ) {
     const {id} = useParams();
@@ -99,7 +99,7 @@ export default function ListingPage ( { formData, setFormData } ) {
                     
                     </Col>
                     <Col sm={10} md={8} lg={6}>
-                        <ListingMap address={address} />  
+                        <SingleListingMap address={address} />  
                     </Col>
                 </Row>
                 :
