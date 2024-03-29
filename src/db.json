@@ -83,7 +83,7 @@
       "postcode": "NSW 2029",
       "dateUpdated": "2024-03-29",
       "timeUpdated": "07:36",
-      "electricals": "Blender",
+      "electricals": "",
       "garden": "Pots",
       "sports": "Golf Clubs",
       "id": 48
@@ -113,17 +113,18 @@
       "id": 50
     },
     {
-      "date": "2024-03-02",
-      "time": "10:00",
-      "address": "Unit 9, 16 Military Road",
+      "date": "2024-03-29",
+      "time": "16:24",
+      "address": "Unit 8, 16 Military Road",
       "suburb": "North Bondi",
       "postcode": "2026",
       "dateUpdated": "",
       "timeUpdated": "",
-      "clothing": "",
-      "kitchenware": "",
-      "garden": "Herb plants, pots, trowel",
-      "id": 51
+      "garden": "",
+      "kitchenware": "Plates, cutlery",
+      "other": "",
+      "otherItems": "Shoe rack",
+      "id": 52
     }
   ]
 }

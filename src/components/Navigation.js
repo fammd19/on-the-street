@@ -1,5 +1,5 @@
-import { NavLink } from 'react-router-dom';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { NavLink } from "react-router-dom";
+import { Container, Nav, Navbar } from "react-bootstrap";
 
 function Navigation () {
   return (

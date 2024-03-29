@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import image from "./assets/placeholder-image.jpeg"
-import { Card } from 'react-bootstrap';
+import { Card } from "react-bootstrap";
 import {
   APIProvider,
   Map,

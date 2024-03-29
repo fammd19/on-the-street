@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Card, OverlayTrigger, Tooltip, Button } from 'react-bootstrap';
+import { Card, OverlayTrigger, Tooltip, Button } from "react-bootstrap";
 import image from "./assets/placeholder-image.jpeg"
 import { Link } from "react-router-dom"
 import {

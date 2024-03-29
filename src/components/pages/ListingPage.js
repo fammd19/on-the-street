@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import { useNavigate, Link } from 'react-router-dom';
-import { Button, Alert, Col, Row } from 'react-bootstrap';
+import { useNavigate, Link } from "react-router-dom";
+import { Button, Alert, Col, Row } from "react-bootstrap";
 import UpdateForm from "../UpdateForm"
 import SingleListingMap from "../SingleListingMap"
 import icon from "../assets/success-icon.svg"

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-import { Button, Card, Col, Row} from 'react-bootstrap';
+import { Button, Card, Col, Row} from "react-bootstrap";
 import Filter from "../Filter";
 import icon from "../assets/listing-icon.svg"
 
