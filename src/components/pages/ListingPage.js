@@ -6,7 +6,7 @@ import UpdateForm from "../UpdateForm"
 import SingleListingMap from "../SingleListingMap"
 import icon from "../assets/success-icon.svg"
 
-export default function ListingPage ( { formData, setFormData } ) {
+export default function ListingPage ( {formData, setFormData} ) {
     const {id} = useParams();
     const [listing, setListing] = useState (null)
     let address = `${formData.address}, ${formData.suburb}, ${formData.postcode}`
@@ -51,7 +51,6 @@ export default function ListingPage ( { formData, setFormData } ) {
         <>
             <div className="mx-5 my-5">
                 <Link className="ml-3" to="/listings"><Button variant="secondary">Back to listings</Button></Link>
-                <Link className="mx-3" to="/share"><Button variant="secondary">Add a listing</Button></Link>
             </div>
             {
                 listing
@@ -60,7 +59,6 @@ export default function ListingPage ( { formData, setFormData } ) {
                     <Col sm={12} md={10} lg={8}>
                     <h1>Listing details</h1>
                     <div className="listing" value={listing.id}>
-                        {/* Check if need value={listingID} expect not */}
                         <h2>{`Located at: ${listing.address}, ${listing.suburb} ${listing.postcode}`}</h2>
                         <h3>
                             {

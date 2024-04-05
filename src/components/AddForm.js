@@ -1,38 +1,96 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button, Form, Col, Row, InputGroup } from "react-bootstrap";
 import { useNavigate  } from "react-router-dom"
 
-function AddForm ( { formData,setFormData }) {
+function AddForm () {
 
-    const [isClothing, setIsClothing] = useState(false)
-    const [isElectricals, setIsElectricals] = useState(false)
-    const [isFurniture, setIsFurniture] = useState(false)
-    const [isKitchenware, setIsKitchenware] = useState(false)
-    const [isKids, setIsKids] = useState(false)
-    const [isGarden, setIsGarden] = useState(false)
-    const [isSports, setIsSports] = useState(false)
-    const [isOther, setIsOther] = useState(false)
+
+    // const category = {
+    //   clothing: false,
+    //   electricals: false,
+    //   furniture: false,
+    //   kitchenware: false,
+    //   kids: false,
+    //   garden: false,
+    //   sports: false,
+    //   other: false
+    // }
+
+    // const [isClothing, setIsClothing] = useState(false)
+    // const [isElectricals, setIsElectricals] = useState(false)
+    // const [isFurniture, setIsFurniture] = useState(false)
+    // const [isKitchenware, setIsKitchenware] = useState(false)
+    // const [isKids, setIsKids] = useState(false)
+    // const [isGarden, setIsGarden] = useState(false)
+    // const [isSports, setIsSports] = useState(false)
+    // const [isOther, setIsOther] = useState(false)
+
+    const [formData, setFormData] = useState({
+      date: "",
+      time: "",
+      address: "",
+      suburb:"",
+      postcode:"",
+      clothing:"",
+      electricals: "",
+      furniture: "",
+      garden:"",
+      kids:"",
+      kitchenware: "",
+      sports:"",
+      otherItems: "",
+      dateUpdated: "",
+      timeUpdated: ""
+    })
+
+    // useEffect (()=> {
+    //     setFormData({
+    //         date: "",
+    //         time: "",
+    //         address: "",
+    //         suburb:"",
+    //         postcode:"",
+    //         dateUpdated: "",
+    //         timeUpdated: ""
+    //     })
+    // },[])
 
     const navigate = useNavigate();
 
     function handleCategory (event) {
-      let category = event.target.value.toLowerCase()
-        let categoryName = category.toLowerCase() + "Items";
-        let isCategory = eval("is" + category.charAt(0).toUpperCase() + category.slice(1));
-        let focusId = category.toLowerCase() + "-input";
-        
-        // Show or hide the element based on category state
-        if (!isCategory) {
-          eval("setIs" + category.charAt(0).toUpperCase() + category.slice(1) + "(true)");
-          formData[category.toLowerCase()] = "";
-          document.getElementById(categoryName).classList.remove("hide");
-          document.getElementById(focusId).focus();
-        } else {
-          eval("setIs" + category.charAt(0).toUpperCase() + category.slice(1) + "(false)");
-          document.getElementById(categoryName).classList.add("hide");
-          formData[category.toLowerCase()] = "";
-        }     
+      const clickedCategory = event.target.value.toLowerCase();
+      const clickedCategorySC = `${clickedCategory}Items`;
+      const isChecked = event.target.checked;
+    
+      if (isChecked) {
+        formData[clickedCategory] = "";
+        setFormData({...formData, clickedCategory: ""})
+        document.getElementById(clickedCategorySC).classList.remove("hide");
+      } else {
+        formData[clickedCategory] = "";
+        setFormData({...formData, clickedCategory: ""})
+        document.getElementById(clickedCategorySC).classList.add("hide");
+      }    
     }
+
+      // function handleCategory (event) {
+      //   let category = event.target.value.toLowerCase()
+      //     let categoryName = category.toLowerCase() + "Items";
+      //     let isCategory = eval("is" + category.charAt(0).toUpperCase() + category.slice(1));
+      //     let focusId = category.toLowerCase() + "-input";
+          
+      //     // Show or hide the element based on category state
+      //     if (!isCategory) {
+      //       eval("setIs" + category.charAt(0).toUpperCase() + category.slice(1) + "(true)");
+      //       formData[category.toLowerCase()] = "";
+      //       document.getElementById(categoryName).classList.remove("hide");
+      //       document.getElementById(focusId).focus();
+      //     } else {
+      //       eval("setIs" + category.charAt(0).toUpperCase() + category.slice(1) + "(false)");
+      //       document.getElementById(categoryName).classList.add("hide");
+      //       formData[category.toLowerCase()] = "";
+      //     }     
+      // }
 
     function handleSubmit (event) {
         event.preventDefault();

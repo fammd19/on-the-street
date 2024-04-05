@@ -37,10 +37,8 @@ function App() {
     <BrowserRouter>
         <Navigation />
         <Routes>
-          <Route path='/' exact element={<Home/>} />
-          <Route path='/share' element={<Share 
-            formData={formData} setFormData={setFormData}
-            />} 
+          <Route path='/' exact element={<Home />} />
+          <Route path='/share' element={<Share />} 
           />
           <Route path='*' element={<PageNotFound />} />
           <Route path='/listings' element={<Listings />}>

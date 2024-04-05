@@ -5,7 +5,7 @@ export default function Listings () {
     return (
         <>
             <Container className="my-3 mx-0">
-                    <Outlet/>
+                <Outlet/>
             </Container>
         </>
     )

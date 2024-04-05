@@ -1,26 +1,12 @@
 {
   "listings": [
     {
-      "date": "2024-03-23",
-      "time": "07:11",
-      "address": "4 Australia Street",
-      "suburb": "Camperdown",
-      "postcode": "2050",
-      "kitchenware": "Mugs, Glasses",
-      "furniture": "",
-      "electricals": "",
-      "otherItems": "",
-      "dateUpdated": "2024-03-22",
-      "timeUpdated": "17:10",
-      "id": 7
-    },
-    {
       "date": "2024-03-16",
       "time": "12:24",
       "address": "Unit 9, 16 Military Road",
       "suburb": "North Bondi",
       "postcode": "2026",
-      "kitchenware": "Salad bowl, wine glasses",
+      "kitchenware": "Salad bowl, wine glass",
       "furniture": "",
       "electricals": "",
       "otherItems": "Suitcase",
@@ -64,18 +50,6 @@
       "id": 40
     },
     {
-      "date": "2024-03-22",
-      "time": "07:30",
-      "address": "115 DENISON STREET",
-      "suburb": "BONDI JUNCTION",
-      "postcode": "2022",
-      "dateUpdated": "2024-03-21",
-      "timeUpdated": "07:35",
-      "electricals": "Blender, Phone Charger",
-      "garden": "",
-      "id": 47
-    },
-    {
       "date": "2024-03-08",
       "time": "07:37",
       "address": "594 New South Head Rd",
@@ -96,7 +70,7 @@
       "postcode": "2022",
       "dateUpdated": "2024-03-29",
       "timeUpdated": "07:44",
-      "clothing": "T-shirts",
+      "clothing": "",
       "furniture": "Sofa",
       "id": 49
     },
@@ -125,6 +99,48 @@
       "other": "",
       "otherItems": "Shoe rack",
       "id": 52
+    },
+    {
+      "date": "2024-04-11",
+      "time": "16:05",
+      "address": "115 DENISON STREET",
+      "suburb": "BONDI JUNCTION",
+      "postcode": "2022",
+      "dateUpdated": "2024-04-06",
+      "timeUpdated": "06:54",
+      "electricals": "Router, HDMI cables",
+      "furniture": "Small desk",
+      "id": 53
+    },
+    {
+      "date": "2024-04-05",
+      "time": "16:47",
+      "address": "3 Australia Street",
+      "suburb": "Camperdown",
+      "postcode": "2050",
+      "dateUpdated": "2024-04-05",
+      "timeUpdated": "16:48",
+      "clothing": "",
+      "garden": "Trellis, garden seeds",
+      "sports": "Golf clubs, football",
+      "id": 54
+    },
+    {
+      "date": "2024-04-06",
+      "time": "07:12",
+      "address": "Unit 8, 16 Military Road",
+      "suburb": "North Bondi",
+      "postcode": "2026",
+      "dateUpdated": "",
+      "timeUpdated": "",
+      "clothing": "",
+      "clickedCategory": "",
+      "furniture": "",
+      "garden": "",
+      "electricals": "",
+      "kitchenware": "Mugs",
+      "sports": "Football boots",
+      "id": 55
     }
   ]
 }

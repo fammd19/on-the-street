@@ -17,7 +17,7 @@ function Navigation () {
             <NavLink className="nav-link" to="/share" style={({isActive}) => {
                 return {textDecoration:(isActive) ? "bold" : "none"}
               }}>
-              Share
+              Add a listing
             </NavLink>
           </Nav>
         </Navbar.Collapse>
