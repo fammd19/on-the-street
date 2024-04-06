@@ -4,27 +4,6 @@ import { useNavigate  } from "react-router-dom"
 
 function AddForm () {
 
-
-    // const category = {
-    //   clothing: false,
-    //   electricals: false,
-    //   furniture: false,
-    //   kitchenware: false,
-    //   kids: false,
-    //   garden: false,
-    //   sports: false,
-    //   other: false
-    // }
-
-    // const [isClothing, setIsClothing] = useState(false)
-    // const [isElectricals, setIsElectricals] = useState(false)
-    // const [isFurniture, setIsFurniture] = useState(false)
-    // const [isKitchenware, setIsKitchenware] = useState(false)
-    // const [isKids, setIsKids] = useState(false)
-    // const [isGarden, setIsGarden] = useState(false)
-    // const [isSports, setIsSports] = useState(false)
-    // const [isOther, setIsOther] = useState(false)
-
     const [formData, setFormData] = useState({
       date: "",
       time: "",
@@ -42,20 +21,19 @@ function AddForm () {
       dateUpdated: "",
       timeUpdated: ""
     })
-
-    // useEffect (()=> {
-    //     setFormData({
-    //         date: "",
-    //         time: "",
-    //         address: "",
-    //         suburb:"",
-    //         postcode:"",
-    //         dateUpdated: "",
-    //         timeUpdated: ""
-    //     })
-    // },[])
-
+    const [today, setToday] = useState("")
     const navigate = useNavigate();
+
+    useEffect (()=> {
+      const date = new Date();
+      const month = (date.getMonth() + 1).toString().padStart(2, '0');
+      const year = date.getFullYear();
+      const day = (date.getDate()).toString().padStart(2, '0');
+      setToday(`${year}-${month}-${day}`)
+      const hour = date.getHours()
+      const minute = date.getMinutes()
+      setFormData({...formData, date: `${year}-${month}-${day}`, time: `${hour}:${minute}:00`})
+    },[])
 
     function handleCategory (event) {
       const clickedCategory = event.target.value.toLowerCase();
@@ -119,6 +97,7 @@ function AddForm () {
                         type="date"
                         onChange={(event)=>setFormData({...formData, date: event.target.value})}
                         value={formData.date}
+                        max={today}
                       />
                     </InputGroup>
                   </Col>

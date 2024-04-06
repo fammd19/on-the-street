@@ -22,7 +22,7 @@ function Filter ({ search, onSearchChange, onCategoryChange }) {
           </Col>
           <Col sm={5} md={4} lg={3} className="mb-2">
             <Form.Select  name="filter" onChange={onCategoryChange}>
-              <option value="">Filter by category</option>
+              <option value="">View All</option>
               <option value="clothing">Clothing</option>
               <option value="electricals">Electricals</option>
               <option value="furniture">Furniture</option>
