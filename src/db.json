@@ -1,29 +1,14 @@
 {
   "listings": [
     {
-      "date": "2024-03-16",
-      "time": "12:24",
-      "address": "Unit 9, 16 Military Road",
-      "suburb": "North Bondi",
-      "postcode": "2026",
-      "kitchenware": "Salad bowl, wine glass",
-      "furniture": "",
-      "electricals": "",
-      "otherItems": "Suitcase",
-      "dateUpdated": "2024-03-29",
-      "timeUpdated": "02:33",
-      "other": "",
-      "id": 12
-    },
-    {
       "date": "2024-03-21",
       "time": "12:16",
       "address": "633 Bourke St",
       "suburb": "Surry Hills",
       "postcode": "NSW 2010",
-      "dateUpdated": "2024-03-21",
-      "timeUpdated": "07:51",
-      "clothing": "Shoes, Pants",
+      "dateUpdated": "2024-04-08",
+      "timeUpdated": "21:59",
+      "clothing": "Shoes, pants",
       "id": 36
     },
     {
@@ -32,10 +17,10 @@
       "address": "11 Marine Parade",
       "suburb": "Watsons Bay",
       "postcode": "NSW 2030",
-      "dateUpdated": "2024-03-22",
-      "timeUpdated": "11:48",
+      "dateUpdated": "2024-04-08",
+      "timeUpdated": "22:12",
       "furniture": "",
-      "kids": "Toys",
+      "kids": "Toys, high chair",
       "id": 37
     },
     {
@@ -44,23 +29,10 @@
       "address": "115 DENISON STREET",
       "suburb": "BONDI JUNCTION",
       "postcode": "2022",
-      "dateUpdated": "",
-      "timeUpdated": "",
-      "sports": "SPORTS",
+      "dateUpdated": "2024-04-08",
+      "timeUpdated": "22:01",
+      "sports": "Football",
       "id": 40
-    },
-    {
-      "date": "2024-03-08",
-      "time": "07:37",
-      "address": "594 New South Head Rd",
-      "suburb": "Rose Bay",
-      "postcode": "NSW 2029",
-      "dateUpdated": "2024-03-29",
-      "timeUpdated": "07:36",
-      "electricals": "",
-      "garden": "Pots",
-      "sports": "Golf Clubs",
-      "id": 48
     },
     {
       "date": "2024-03-15",
@@ -92,12 +64,12 @@
       "address": "Unit 8, 16 Military Road",
       "suburb": "North Bondi",
       "postcode": "2026",
-      "dateUpdated": "",
-      "timeUpdated": "",
+      "dateUpdated": "2024-04-08",
+      "timeUpdated": "22:01",
       "garden": "",
       "kitchenware": "Plates, cutlery",
       "other": "",
-      "otherItems": "Shoe rack",
+      "otherItems": "Shoe rack, suitcase",
       "id": 52
     },
     {
@@ -141,6 +113,25 @@
       "kitchenware": "Mugs",
       "sports": "Football boots",
       "id": 55
+    },
+    {
+      "date": "2024-04-08",
+      "time": "21:36:00",
+      "address": "115 DENISON STREET",
+      "suburb": "BONDI JUNCTION",
+      "postcode": "2022",
+      "clothing": "Testing date & time",
+      "electricals": "",
+      "furniture": "",
+      "garden": "",
+      "kids": "",
+      "kitchenware": "",
+      "sports": "",
+      "otherItems": "",
+      "dateUpdated": "",
+      "timeUpdated": "",
+      "clickedCategory": "",
+      "id": 56
     }
   ]
 }

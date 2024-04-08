@@ -30,8 +30,8 @@ function AddForm () {
       const year = date.getFullYear();
       const day = (date.getDate()).toString().padStart(2, '0');
       setToday(`${year}-${month}-${day}`)
-      const hour = date.getHours()
-      const minute = date.getMinutes()
+      const hour = (date.getHours()).toString().padStart(2, '0');
+      const minute = (date.getMinutes()).toString().padStart(2, '0');
       setFormData({...formData, date: `${year}-${month}-${day}`, time: `${hour}:${minute}:00`})
     },[])
 
@@ -50,25 +50,6 @@ function AddForm () {
         document.getElementById(clickedCategorySC).classList.add("hide");
       }    
     }
-
-      // function handleCategory (event) {
-      //   let category = event.target.value.toLowerCase()
-      //     let categoryName = category.toLowerCase() + "Items";
-      //     let isCategory = eval("is" + category.charAt(0).toUpperCase() + category.slice(1));
-      //     let focusId = category.toLowerCase() + "-input";
-          
-      //     // Show or hide the element based on category state
-      //     if (!isCategory) {
-      //       eval("setIs" + category.charAt(0).toUpperCase() + category.slice(1) + "(true)");
-      //       formData[category.toLowerCase()] = "";
-      //       document.getElementById(categoryName).classList.remove("hide");
-      //       document.getElementById(focusId).focus();
-      //     } else {
-      //       eval("setIs" + category.charAt(0).toUpperCase() + category.slice(1) + "(false)");
-      //       document.getElementById(categoryName).classList.add("hide");
-      //       formData[category.toLowerCase()] = "";
-      //     }     
-      // }
 
     function handleSubmit (event) {
         event.preventDefault();

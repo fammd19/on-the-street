@@ -1,31 +1,47 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Button, Form, InputGroup, Col, Row } from "react-bootstrap";
 
 
-function UpdateForm ( { listing, setListing, displayListingUpdateForm, displayPrompt,
-    formData,setFormData
+function UpdateForm ( { 
+  listing, setListing, 
+  displayListingUpdateForm, 
+  displayPrompt,
+  formData,setFormData
   } ) {
 
-    useEffect ( () => {
+    const [today, setToday] = useState("")
+    const [timeNow, setTimeNow] = useState("")
+
+  useEffect ( () => {
       fetch("http://localhost:4000/listings/"+listing.id)
       .then(res => res.json())
       .then(json => setFormData(json))
+      const date = new Date();
+      const month = (date.getMonth() + 1).toString().padStart(2, '0');
+      const year = date.getFullYear();
+      const day = (date.getDate()).toString().padStart(2, '0');
+      setToday(`${year}-${month}-${day}`)
+      const hour = (date.getHours()).toString().padStart(2, '0');
+      const minute = (date.getMinutes()).toString().padStart(2, '0');
+      setTimeNow(`${hour}:${minute}`)
   }, [])
 
     function handleSubmit (event) {
-        event.preventDefault();
-        fetch(`http://localhost:4000/listings/${listing.id}`, {
-            method: "PATCH",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(formData),
-          })
-          .then(response => response.json())
-          .catch(error => console.log(error.message))
-          setListing(formData)
-          displayPrompt("success-prompt");
-          displayListingUpdateForm();
+      event.preventDefault();
+      formData.dateUpdated = today
+      formData.timeUpdated = timeNow
+      fetch(`http://localhost:4000/listings/${listing.id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        })
+        .then(response => response.json())
+        .catch(error => console.log(error.message))
+        setListing(formData)
+        displayPrompt("success-prompt");
+        displayListingUpdateForm();
     }
 
     return (
@@ -36,11 +52,9 @@ function UpdateForm ( { listing, setListing, displayListingUpdateForm, displayPr
                   <InputGroup className="mb-3">
                     <InputGroup.Text id="date-update">Date</InputGroup.Text>
                     <Form.Control
-                      required
-                      aria-describedby="date-update"
                       type="date"
-                      onChange={(event)=>setFormData({...formData, dateUpdated: event.target.value})}
-                      value={formData.dateUpdated}
+                      disabled
+                      value={today}
                     />
                   </InputGroup>
                 </Col>
@@ -48,10 +62,9 @@ function UpdateForm ( { listing, setListing, displayListingUpdateForm, displayPr
                   <InputGroup className="mb-3">
                     <InputGroup.Text>Time</InputGroup.Text>
                     <Form.Control
-                      required
                       type="time"
-                      onChange={(event)=>setFormData({...formData, timeUpdated: event.target.value})}
-                      value={formData.timeUpdated}
+                      disabled
+                      value={timeNow}
                     />
                   </InputGroup>
                 </Col>
